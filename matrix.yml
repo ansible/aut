@@ -8,20 +8,41 @@ ansible-base:
 # This is a mapping of dockerfile -> "pre" scripts
 # Note that the matrix can grow rapidly and we are limited to 200 matrix entries
 # in travis-ci.
+#
+# Note any 'env:' entries must also be added to `docker run` in .travis.yml
 dockerfiles:
   centos7:
-    pip:
-    tar:
-    rpm:
-      exclude:
-        - ansible-base
+    - pip:
+    - tar:
+    - rpm:
+        exclude:
+          - ansible-base
   centos8:
-    pip:
-    tar:
+    - pip:
+    - tar:
   ubuntu2004:
-    pip:
-    tar:
+    - pip:
+    - tar:
   ubuntu1804:
-    pip:
-    tar:
-    ppa:
+    - pip:
+    - tar:
+    - ppa:
+        version_re: ^2\.8
+        env:
+          PPA: ansible/ansible-2.8
+    - ppa:
+        version_re: ^2\.9
+        env:
+          PPA: ansible/ansible-2.9
+    - ppa:
+        version_re: ^2\.10
+        env:
+          PPA: ansible/ansible-2.10
+    - ppa:
+        # The default PPA will have ansible-2.9 and ansible-base 2.10
+        # Once ansible (ACD) 2.10 goes into it, we'll want to
+        # exclude: ansible to limit to ansible-base.
+        # At that point version_re will likely want to be ^2\.Y as well.
+        version_re: "^(?!2\\.8)"
+        env:
+          PPA: ansible/ansible

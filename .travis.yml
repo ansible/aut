@@ -22,6 +22,15 @@ env:
   - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible        VERSION=2.8.14
   - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible        VERSION=2.9.12
   - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=ubuntu1804     PRE=pip            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=ubuntu1804     PRE=pip            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=ubuntu1804     PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=ubuntu1804     PRE=tar            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=ubuntu1804     PRE=tar            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=ubuntu1804     PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=ubuntu1804     PRE=ppa            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=ubuntu1804     PRE=ppa            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=ubuntu1804     PRE=ppa            PRODUCT=ansible-base   VERSION=2.10.0
 
 services:
   - docker

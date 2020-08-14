@@ -2,12 +2,26 @@ sudo: required
 
 # Generate these lines by editing matrix.yml and running build-matrix.py
 env:
-  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
   - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible        VERSION=2.8.14
   - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible        VERSION=2.9.12
   - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=centos7        PRE=tar            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=centos7        PRE=tar            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=centos7        PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=centos7        PRE=rpm            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=centos7        PRE=rpm            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=centos8        PRE=tar            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=centos8        PRE=tar            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=centos8        PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=ubuntu2004     PRE=pip            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=ubuntu2004     PRE=pip            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=ubuntu2004     PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
 
 services:
   - docker

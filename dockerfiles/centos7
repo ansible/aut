@@ -1,7 +1,8 @@
-FROM centos:8
+FROM centos:7
 
 RUN yum -y update && \
-  yum -y install python3-pip wget && \
+  yum -y install epel-release && \
+  yum -y install python-pip wget which && \
   yum clean all
 
 COPY . /opt

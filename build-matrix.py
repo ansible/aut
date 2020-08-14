@@ -15,7 +15,7 @@ def main():
             new_line['PRE'] = pre
 
             for product in ('ansible', 'ansible-base'):
-                if premeta and premeta.get('exclude', '') == product:
+                if premeta and product in premeta.get('exclude', []):
                     continue
 
                 for version in data[product]:

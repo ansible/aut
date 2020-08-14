@@ -6,13 +6,18 @@ ansible-base:
   - 2.10.0
 
 # This is a mapping of dockerfile -> "pre" scripts
+# Note that the matrix can grow rapidly and we are limited to 200 matrix entries
+# in travis-ci.
 dockerfiles:
+  centos7:
+    pip:
+    tar:
+    rpm:
+      exclude:
+        - ansible-base
   centos8:
     pip:
     tar:
   ubuntu2004:
     pip:
     tar:
-  #centos7:
-  #  pip:
-  #  tar:

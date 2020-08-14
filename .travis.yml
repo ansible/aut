@@ -2,35 +2,37 @@ sudo: required
 
 # Generate these lines by editing matrix.yml and running build-matrix.py
 env:
-  - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
-  - DOCKERFILE=centos7        PRE=tar            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=centos7        PRE=tar            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=centos7        PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
-  - DOCKERFILE=centos7        PRE=rpm            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=centos7        PRE=rpm            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
-  - DOCKERFILE=centos8        PRE=tar            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=centos8        PRE=tar            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=centos8        PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
-  - DOCKERFILE=ubuntu2004     PRE=pip            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=ubuntu2004     PRE=pip            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=ubuntu2004     PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
-  - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=ubuntu2004     PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
-  - DOCKERFILE=ubuntu1804     PRE=pip            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=ubuntu1804     PRE=pip            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=ubuntu1804     PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
-  - DOCKERFILE=ubuntu1804     PRE=tar            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=ubuntu1804     PRE=tar            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=ubuntu1804     PRE=tar            PRODUCT=ansible-base   VERSION=2.10.0
-  - DOCKERFILE=ubuntu1804     PRE=ppa            PRODUCT=ansible        VERSION=2.8.14
-  - DOCKERFILE=ubuntu1804     PRE=ppa            PRODUCT=ansible        VERSION=2.9.12
-  - DOCKERFILE=ubuntu1804     PRE=ppa            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=centos7     PRE=pip  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=centos7     PRE=pip  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=centos7     PRE=pip  PRODUCT=ansible-base  VERSION=2.10.0
+  - DOCKERFILE=centos7     PRE=tar  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=centos7     PRE=tar  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=centos7     PRE=tar  PRODUCT=ansible-base  VERSION=2.10.0
+  - DOCKERFILE=centos7     PRE=rpm  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=centos7     PRE=rpm  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=centos8     PRE=pip  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=centos8     PRE=pip  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=centos8     PRE=pip  PRODUCT=ansible-base  VERSION=2.10.0
+  - DOCKERFILE=centos8     PRE=tar  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=centos8     PRE=tar  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=centos8     PRE=tar  PRODUCT=ansible-base  VERSION=2.10.0
+  - DOCKERFILE=ubuntu2004  PRE=pip  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=ubuntu2004  PRE=pip  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=ubuntu2004  PRE=pip  PRODUCT=ansible-base  VERSION=2.10.0
+  - DOCKERFILE=ubuntu2004  PRE=tar  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=ubuntu2004  PRE=tar  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=ubuntu2004  PRE=tar  PRODUCT=ansible-base  VERSION=2.10.0
+  - DOCKERFILE=ubuntu1804  PRE=pip  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=ubuntu1804  PRE=pip  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=ubuntu1804  PRE=pip  PRODUCT=ansible-base  VERSION=2.10.0
+  - DOCKERFILE=ubuntu1804  PRE=tar  PRODUCT=ansible       VERSION=2.8.14
+  - DOCKERFILE=ubuntu1804  PRE=tar  PRODUCT=ansible       VERSION=2.9.12
+  - DOCKERFILE=ubuntu1804  PRE=tar  PRODUCT=ansible-base  VERSION=2.10.0
+  - DOCKERFILE=ubuntu1804  PRE=ppa  PRODUCT=ansible       VERSION=2.8.14  PPA=ansible/ansible-2.8
+  - DOCKERFILE=ubuntu1804  PRE=ppa  PRODUCT=ansible       VERSION=2.9.12  PPA=ansible/ansible-2.9
+  - DOCKERFILE=ubuntu1804  PRE=ppa  PRODUCT=ansible-base  VERSION=2.10.0  PPA=ansible/ansible-2.10
+  - DOCKERFILE=ubuntu1804  PRE=ppa  PRODUCT=ansible       VERSION=2.9.12  PPA=ansible/ansible
+  - DOCKERFILE=ubuntu1804  PRE=ppa  PRODUCT=ansible-base  VERSION=2.10.0  PPA=ansible/ansible
 
 services:
   - docker
@@ -41,7 +43,7 @@ before_script:
 script:
   - >
     docker run -t -e PYTHONPATH="/opt/pre/$PRODUCT-$VERSION/lib" -e PRE="$PRE"
-    -e PRODUCT="$PRODUCT" -e VERSION="$VERSION" "aut-$DOCKERFILE"
+    -e PRODUCT="$PRODUCT" -e VERSION="$VERSION" -e PPA="$PPA" "aut-$DOCKERFILE"
 
 notifications:
   webhooks:

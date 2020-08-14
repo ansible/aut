@@ -1,7 +1,7 @@
 FROM centos:8
 
 RUN yum -y update && \
-  yum -y install python3-pip wget && \
+  yum -y install python3-pip wget which && \
   yum clean all
 
 COPY . /opt

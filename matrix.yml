@@ -21,3 +21,7 @@ dockerfiles:
   ubuntu2004:
     pip:
     tar:
+  ubuntu1804:
+    pip:
+    tar:
+    ppa:

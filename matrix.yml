@@ -1,0 +1,18 @@
+ansible:
+  - 2.8.14
+  - 2.9.12
+
+ansible-base:
+  - 2.10.0
+
+# This is a mapping of dockerfile -> "pre" scripts
+dockerfiles:
+  centos8:
+    pip:
+    tar:
+  ubuntu2004:
+    pip:
+    tar:
+  #centos7:
+  #  pip:
+  #  tar:

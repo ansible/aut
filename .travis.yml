@@ -1,0 +1,34 @@
+sudo: required
+
+# Generate these lines by editing matrix.yml and running build-matrix.py
+env:
+  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=centos8        PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
+  - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible        VERSION=2.8.14
+  - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible        VERSION=2.9.12
+  - DOCKERFILE=centos7        PRE=pip            PRODUCT=ansible-base   VERSION=2.10.0
+
+services:
+  - docker
+
+before_script:
+  - docker build -t "aut-$DOCKERFILE" -f "dockerfiles/$DOCKERFILE" .
+
+script:
+  - >
+    docker run -t -e PYTHONPATH="/opt/pre/$PRODUCT-$VERSION/lib" -e PRE="$PRE"
+    -e PRODUCT="$PRODUCT" -e VERSION="$VERSION" "aut-$DOCKERFILE"
+
+notifications:
+  webhooks:
+    - if: type != cron
+      urls:
+        - https://sl.da.gd/travisci?channel=%23relrodtest
+    - if: type == cron
+      on_success: change
+      on_failure: change
+      on_error: change
+      on_cancel: never
+      urls:
+        - https://sl.da.gd/travisci?channel=%23relrodtest

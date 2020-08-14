@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks:
+    - command: uptime
+      register: res
+
+    - assert:
+        that:
+          - "'load average:' in res.stdout"

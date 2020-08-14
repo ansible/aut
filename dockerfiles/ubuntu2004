@@ -1,0 +1,10 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && \
+  apt-get -y upgrade && \
+  apt-get -y install python3-pip wget && \
+  apt-get clean
+
+COPY . /opt
+
+ENTRYPOINT ["bash", "/opt/entrypoint.sh"]

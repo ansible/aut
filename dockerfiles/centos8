@@ -1,0 +1,9 @@
+FROM centos:8
+
+RUN yum -y update && \
+  yum -y install python3-pip wget  && \
+  yum clean all
+
+COPY . /opt
+
+ENTRYPOINT ["bash", "/opt/entrypoint.sh"]

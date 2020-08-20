@@ -9,7 +9,7 @@ ansible-base:
 # Note that the matrix can grow rapidly and we are limited to 200 matrix entries
 # in travis-ci.
 #
-# Note any 'env:' entries must also be added to `docker run` in .travis.yml
+# Note any 'env:' entries must also be added to `docker run` in build-matrix.py
 dockerfiles:
   centos7:
     - pip:

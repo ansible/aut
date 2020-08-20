@@ -17,4 +17,12 @@ most situations.
 
 * `matrix.yml` describes the test matrix
 
-* `build-matrix.py` generates `env` lines for `.travis.yml`
+* `build-matrix.py` generates `.travis.yml`
+
+## Using
+
+To bump versions, update `matrix.yml` accordingly and run:
+
+```bash
+./build-matrix.py > .travis.yml
+```

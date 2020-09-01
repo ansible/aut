@@ -27,17 +27,15 @@ dockerfiles:
     - pip:
     - tar:
     - ppa:
-        # RCs don't make it to the PPA, so skip them. We could probably make a
-        # `skip_rcs: bool` instead and it would be nicer.
-        version_re: "^2\\.8(?!.*(rc)).*"
+        version_re: ^2\.8
         env:
           PPA: ansible/ansible-2.8
     - ppa:
-        version_re: "^2\\.9(?!.*(rc)).*"
+        version_re: ^2\.9
         env:
           PPA: ansible/ansible-2.9
     - ppa:
-        version_re: "^2\\.10(?!.*(rc)).*"
+        version_re: ^2\.10
         env:
           PPA: ansible/ansible-2.10
     - ppa:
@@ -45,6 +43,6 @@ dockerfiles:
         # Once ansible (ACD) 2.10 goes into it, we'll want to
         # exclude: ansible to limit to ansible-base.
         # At that point version_re will likely want to be ^2\.Y as well.
-        version_re: "^(?!.*(2\\.8|rc)).*"
+        version_re: "^(?!2\\.8)"
         env:
           PPA: ansible/ansible

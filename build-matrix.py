@@ -65,6 +65,9 @@ def main():
                             if version_re and not re.search(version_re, version):
                                 continue
 
+                            if 'rc' in premeta.get('exclude', []) and 'rc' in version:
+                                continue
+
                             env = premeta.get('env', {})
                             if env:
                                 for k, v in env.items():

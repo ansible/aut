@@ -17,6 +17,7 @@ dockerfiles:
     - rpm:
         exclude:
           - ansible-base
+          - rc
   centos8:
     - pip:
     - tar:
@@ -28,14 +29,20 @@ dockerfiles:
     - tar:
     - ppa:
         version_re: ^2\.8
+        exclude:
+          - rc
         env:
           PPA: ansible/ansible-2.8
     - ppa:
         version_re: ^2\.9
+        exclude:
+          - rc
         env:
           PPA: ansible/ansible-2.9
     - ppa:
         version_re: ^2\.10
+        exclude:
+          - rc
         env:
           PPA: ansible/ansible-2.10
     - ppa:
@@ -44,5 +51,7 @@ dockerfiles:
         # exclude: ansible to limit to ansible-base.
         # At that point version_re will likely want to be ^2\.Y as well.
         version_re: "^(?!2\\.8)"
+        exclude:
+          - rc
         env:
           PPA: ansible/ansible

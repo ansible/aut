@@ -29,9 +29,7 @@ env:
 - DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible-base VERSION=2.10.1rc2
 - DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.8.15 PPA=ansible/ansible-2.8
 - DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.9.13 PPA=ansible/ansible-2.9
-- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible-base VERSION=2.10.1rc2 PPA=ansible/ansible-2.10
 - DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.9.13 PPA=ansible/ansible
-- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible-base VERSION=2.10.1rc2 PPA=ansible/ansible
 notifications:
   webhooks:
   - if: type != cron

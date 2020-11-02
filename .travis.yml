@@ -1,61 +1,37 @@
 before_script:
 - docker build -t "aut-$DOCKERFILE" -f "dockerfiles/$DOCKERFILE" .
 env:
-- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible VERSION=2.8.17rc1
-- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible VERSION=2.9.15rc1
-- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible-base VERSION=2.10.2
-- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible-base VERSION=2.10.3rc1
-- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible VERSION=2.8.17rc1
-- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible VERSION=2.9.15rc1
-- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible-base VERSION=2.10.2
-- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible-base VERSION=2.10.3rc1
-- DOCKERFILE=centos7 PRE=rpm PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=centos7 PRE=rpm PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible VERSION=2.8.17rc1
-- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible VERSION=2.9.15rc1
-- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible-base VERSION=2.10.2
-- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible-base VERSION=2.10.3rc1
-- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible VERSION=2.8.17rc1
-- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible VERSION=2.9.15rc1
-- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible-base VERSION=2.10.2
-- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible-base VERSION=2.10.3rc1
-- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible VERSION=2.8.17rc1
-- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible VERSION=2.9.15rc1
-- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible-base VERSION=2.10.2
-- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible-base VERSION=2.10.3rc1
-- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible VERSION=2.8.17rc1
-- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible VERSION=2.9.15rc1
-- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible-base VERSION=2.10.2
-- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible-base VERSION=2.10.3rc1
-- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible VERSION=2.8.17rc1
-- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible VERSION=2.9.15rc1
-- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible-base VERSION=2.10.2
-- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible-base VERSION=2.10.3rc1
-- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible VERSION=2.8.16
-- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible VERSION=2.9.14
-- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible VERSION=2.8.17rc1
-- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible VERSION=2.9.15rc1
-- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible-base VERSION=2.10.2
-- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible-base VERSION=2.10.3rc1
-- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.8.16 PPA=ansible/ansible-2.8
-- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.9.14 PPA=ansible/ansible-2.9
-- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible-base VERSION=2.10.2 PPA=ansible/ansible-2.10
-- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.9.14 PPA=ansible/ansible
-- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible-base VERSION=2.10.2 PPA=ansible/ansible
+- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=centos7 PRE=pip PRODUCT=ansible-base VERSION=2.10.3
+- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=centos7 PRE=tar PRODUCT=ansible-base VERSION=2.10.3
+- DOCKERFILE=centos7 PRE=rpm PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=centos7 PRE=rpm PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=centos8 PRE=pip PRODUCT=ansible-base VERSION=2.10.3
+- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=centos8 PRE=tar PRODUCT=ansible-base VERSION=2.10.3
+- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=ubuntu2004 PRE=pip PRODUCT=ansible-base VERSION=2.10.3
+- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=ubuntu2004 PRE=tar PRODUCT=ansible-base VERSION=2.10.3
+- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=ubuntu1804 PRE=pip PRODUCT=ansible-base VERSION=2.10.3
+- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible VERSION=2.8.17
+- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible VERSION=2.9.15
+- DOCKERFILE=ubuntu1804 PRE=tar PRODUCT=ansible-base VERSION=2.10.3
+- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.8.17 PPA=ansible/ansible-2.8
+- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.9.15 PPA=ansible/ansible-2.9
+- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible-base VERSION=2.10.3 PPA=ansible/ansible-2.10
+- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible VERSION=2.9.15 PPA=ansible/ansible
+- DOCKERFILE=ubuntu1804 PRE=ppa PRODUCT=ansible-base VERSION=2.10.3 PPA=ansible/ansible
 notifications:
   webhooks:
   - if: type != cron

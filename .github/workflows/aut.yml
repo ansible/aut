@@ -146,6 +146,7 @@ jobs:
     timeout-minutes: 20
   notify:
     needs: build
+    runs-on: ubuntu-latest
     steps:
     - if: github.event_name != 'schedule'
       name: Notify on success

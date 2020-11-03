@@ -5,7 +5,13 @@ import yaml
 
 YAML = {
     'name': 'Ansible User Artifact Tests',
-    'on': ['push', 'pull_request'],
+    'on': {
+        'push': True,
+        'pull_request': True,
+        'schedule': {
+            'cron': '0 0 * * *',
+        },
+    },
     'jobs': {
         'build': {
             'runs-on': 'ubuntu-latest',
@@ -35,6 +41,19 @@ YAML = {
                            '-e VERSION="${{ matrix.version }}" '
                            '-e PPA="${{ matrix.ppa }}" '
                            '"aut-${{ matrix.dockerfile }}"'
+                },
+                {
+                    'name': 'Notify on failure',
+                    'if': "${{ failure() }} or github.event_name != 'schedule'",
+                    'uses': 'joelwmale/webhook-action@master',
+                    'with': {
+                        'url': 'https://sl.da.gd/slackjack',
+                        'headers': '{"repository": "relrod/aut"}',
+                        'body': '{"channel": "#relrodtest", "username": "aut",'
+                                '"url": "https://github.com/${{ github.repository }}'
+                                '/actions/runs/${{ github.run_id }}", '
+                                '"text": "aut tests failed"}',
+                    },
                 },
             ],
         },

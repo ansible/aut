@@ -17,6 +17,9 @@ YAML = {
             'runs-on': 'ubuntu-latest',
             'timeout-minutes': 20,  # TODO: config?
             'strategy': {
+                # Don't fail fast, else we don't get to notifs
+                # Also we want to see all failures.
+                'fail-fast': False,
                 'matrix': {
                     'include': [],
                 },

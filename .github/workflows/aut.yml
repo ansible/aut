@@ -12,6 +12,7 @@ jobs:
         }}/lib" -e PRE="${{ matrix.pre }}" -e PRODUCT="${{ matrix.product }}" -e VERSION="${{
         matrix.version }}" -e PPA="${{ matrix.ppa }}" "aut-${{ matrix.dockerfile }}"
     strategy:
+      fail-fast: false
       matrix:
         include:
         - dockerfile: centos7

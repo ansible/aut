@@ -11,15 +11,6 @@ jobs:
       run: docker run -t -e PYTHONPATH="/opt/pre/${{ matrix.product }}-${{ matrix.version
         }}/lib" -e PRE="${{ matrix.pre }}" -e PRODUCT="${{ matrix.product }}" -e VERSION="${{
         matrix.version }}" -e PPA="${{ matrix.ppa }}" "aut-${{ matrix.dockerfile }}"
-    - if: ${{ failure() }} or github.event_name != 'schedule'
-      name: Notify on failure
-      uses: joelwmale/webhook-action@master
-      with:
-        body: '{"channel": "#relrodtest", "username": "aut","url": "https://github.com/${{
-          github.repository }}/actions/runs/${{ github.run_id }}", "text": "aut tests
-          failed"}'
-        headers: '{"repository": "relrod/aut"}'
-        url: https://sl.da.gd/slackjack
     strategy:
       matrix:
         include:
@@ -153,6 +144,28 @@ jobs:
           product: ansible-base
           version: 2.10.3
     timeout-minutes: 20
+  notify:
+    needs: build
+    steps:
+    - if: github.event_name != 'schedule'
+      name: Notify on success
+      uses: joelwmale/webhook-action@master
+      with:
+        body: '{"channel": "#relrodtest", "username": "aut","url": "https://github.com/${{
+          github.repository }}/actions/runs/${{ github.run_id }}", "text": "aut tests
+          passed"}'
+        headers: '{"repository": "relrod/aut"}'
+        url: https://sl.da.gd/slackjack
+    - if: ${{ failure() }} or github.event_name != 'schedule'
+      name: Notify on failure
+      uses: joelwmale/webhook-action@master
+      with:
+        body: '{"channel": "#relrodtest", "username": "aut","url": "https://github.com/${{
+          github.repository }}/actions/runs/${{ github.run_id }}", "text": "aut tests
+          failed"}'
+        headers: '{"repository": "relrod/aut"}'
+        url: https://sl.da.gd/slackjack
+    timeout-minutes: 1
 name: Ansible User Artifact Tests
 'on':
   pull_request: null

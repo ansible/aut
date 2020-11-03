@@ -11,6 +11,15 @@ jobs:
       run: docker run -t -e PYTHONPATH="/opt/pre/${{ matrix.product }}-${{ matrix.version
         }}/lib" -e PRE="${{ matrix.pre }}" -e PRODUCT="${{ matrix.product }}" -e VERSION="${{
         matrix.version }}" -e PPA="${{ matrix.ppa }}" "aut-${{ matrix.dockerfile }}"
+    - if: ${{ failure() }} or github.event_name != 'schedule'
+      name: Notify on failure
+      uses: joelwmale/webhook-action@master
+      with:
+        body: '{"channel": "#relrodtest", "username": "aut","url": "https://github.com/${{
+          github.repository }}/actions/runs/${{ github.run_id }}", "text": "aut tests
+          failed"}'
+        headers: '{"repository": "relrod/aut"}'
+        url: https://sl.da.gd/slackjack
     strategy:
       matrix:
         include:
@@ -146,6 +155,8 @@ jobs:
     timeout-minutes: 20
 name: Ansible User Artifact Tests
 'on':
-- push
-- pull_request
+  pull_request: true
+  push: true
+  schedule:
+    cron: 0 0 * * *
 

@@ -47,6 +47,7 @@ YAML = {
         'notify': {
             'timeout-minutes': 1,
             'needs': 'build',
+            'runs-on': 'ubuntu-latest',
             'steps': [
                 {
                     'name': 'Notify on success',

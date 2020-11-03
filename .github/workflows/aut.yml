@@ -146,6 +146,7 @@ jobs:
           version: 2.10.3
     timeout-minutes: 20
   notify:
+    if: ${{ always() }}
     needs: build
     runs-on: ubuntu-latest
     steps:

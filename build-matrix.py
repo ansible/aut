@@ -3,63 +3,62 @@
 import re
 import yaml
 
-TRAVIS = {
-    'env': [],
-    'services': ['docker'],
-    'before_script': [
-        'docker build -t "aut-$DOCKERFILE" -f '
-        '"dockerfiles/$DOCKERFILE" .'
-    ],
-    'script': [
-        'docker run -t '
-        '-e PYTHONPATH="/opt/pre/$PRODUCT-$VERSION/lib" '
-        '-e PRE="$PRE" '
-        '-e PRODUCT="$PRODUCT" '
-        '-e VERSION="$VERSION" '
-        '-e PPA="$PPA" '
-        '"aut-$DOCKERFILE"'
-    ],
-    'notifications': {
-        'webhooks': [
-            {
-                'if': 'type != cron',
-                'urls': ['https://sl.da.gd/travisci?channel=%23relrodtest'],
+YAML = {
+    'name': 'Ansible User Artifact Tests',
+    'on': ['push', 'pull_request'],
+    'jobs': {
+        'build': {
+            'runs-on': 'ubuntu-latest',
+            'timeout-minutes': 20,  # TODO: config?
+            'strategy': {
+                'matrix': {
+                    'include': [],
+                },
             },
-            {
-                'if': 'type == cron',
-                'urls': ['https://sl.da.gd/travisci?channel=%23relrodtest'],
-                'on_success': 'change',
-                'on_failure': 'always',
-                'on_error': 'always',
-                'on_cancel': 'never',
-            },
-        ],
+            'steps': [
+                {
+                    'name': 'Clone repo',
+                    'uses': 'actions/checkout@v2',
+                 },
+                {
+                    'name': 'Build container image',
+                    'run': 'docker build -t "aut-${{ matrix.dockerfile }}" '
+                           '-f "dockerfiles/${{ matrix.dockerfile }}" .',
+                },
+                {
+                    'name': 'Run tests',
+                    'run': 'docker run -t '
+                           '-e PYTHONPATH="/opt/pre/${{ matrix.product }}-'
+                           '${{ matrix.version }}/lib" '
+                           '-e PRE="${{ matrix.pre }}" '
+                           '-e PRODUCT="${{ matrix.product }}" '
+                           '-e VERSION="${{ matrix.version }}" '
+                           '-e PPA="${{ matrix.ppa }}" '
+                           '"aut-${{ matrix.dockerfile }}"'
+                },
+            ],
+        },
     },
 }
 
 def main():
     with open('matrix.yml', 'r') as f:
         data = yaml.safe_load(f.read())
-    lines = []
 
     for dockerfile, pres in data['dockerfiles'].items():
-        line = 'DOCKERFILE=%s' % dockerfile
-
         for pre_dict in pres:
             for pre, premeta in pre_dict.items():
-                new_line = line
-                new_line += ' PRE=%s' % pre
-
                 for product in ('ansible', 'ansible-base'):
                     if premeta:
                         if product in premeta.get('exclude', []):
                             continue
-
                     for version in data[product]:
-                        new_new_line = new_line
-                        new_new_line += ' PRODUCT=%s' % product
-                        new_new_line += ' VERSION=%s' % version
-
+                        matrix_entry = {
+                            'dockerfile': dockerfile,
+                            'version': version,
+                            'product': product,
+                            'pre': pre,
+                        }
                         if premeta:
                             version_re = premeta.get('version_re', '')
                             if version_re and not re.search(version_re, version):
@@ -71,10 +70,10 @@ def main():
                             env = premeta.get('env', {})
                             if env:
                                 for k, v in env.items():
-                                    new_new_line += ' %s=%s' % (k, v)
-                        TRAVIS['env'].append(new_new_line)
+                                    matrix_entry[k] = v
+                        YAML['jobs']['build']['strategy']['matrix']['include'].append(matrix_entry)
 
-    print(yaml.dump(TRAVIS))
+    print(yaml.dump(YAML))
 
 if __name__ == '__main__':
     main()

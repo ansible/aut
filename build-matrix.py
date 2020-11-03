@@ -51,7 +51,7 @@ YAML = {
             'steps': [
                 {
                     'name': 'Notify on success',
-                    'if': "github.event_name != 'schedule'",
+                    'if': "${{ success() }} && github.event_name != 'schedule'",
                     'uses': 'joelwmale/webhook-action@master',
                     'with': {
                         'url': 'https://sl.da.gd/slackjack',
@@ -64,7 +64,7 @@ YAML = {
                 },
                 {
                     'name': 'Notify on failure',
-                    'if': "${{ failure() }} or github.event_name != 'schedule'",
+                    'if': "${{ failure() }}",
                     'uses': 'joelwmale/webhook-action@master',
                     'with': {
                         'url': 'https://sl.da.gd/slackjack',

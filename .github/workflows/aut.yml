@@ -148,7 +148,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - if: github.event_name != 'schedule'
+    - if: ${{ success() }} && github.event_name != 'schedule'
       name: Notify on success
       uses: joelwmale/webhook-action@master
       with:
@@ -157,7 +157,7 @@ jobs:
           passed"}'
         headers: '{"repository": "relrod/aut"}'
         url: https://sl.da.gd/slackjack
-    - if: ${{ failure() }} or github.event_name != 'schedule'
+    - if: ${{ failure() }}
       name: Notify on failure
       uses: joelwmale/webhook-action@master
       with:

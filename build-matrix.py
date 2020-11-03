@@ -6,8 +6,8 @@ import yaml
 YAML = {
     'name': 'Ansible User Artifact Tests',
     'on': {
-        'push': True,
-        'pull_request': True,
+        'push': '',
+        'pull_request': '',
         'schedule': {
             'cron': '0 0 * * *',
         },

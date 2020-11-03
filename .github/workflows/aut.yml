@@ -155,8 +155,8 @@ jobs:
     timeout-minutes: 20
 name: Ansible User Artifact Tests
 'on':
-  pull_request: true
-  push: true
+  pull_request: ''
+  push: ''
   schedule:
     cron: 0 0 * * *
 

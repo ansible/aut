@@ -8,9 +8,9 @@ YAML = {
     'on': {
         'push': None,
         'pull_request': None,
-        'schedule': {
-            'cron': '0 0 * * *',
-        },
+        'schedule': [
+            { 'cron': '0 0 * * *', }
+        ],
     },
     'jobs': {
         'build': {

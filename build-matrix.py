@@ -42,6 +42,25 @@ YAML = {
                            '-e PPA="${{ matrix.ppa }}" '
                            '"aut-${{ matrix.dockerfile }}"'
                 },
+            ],
+        },
+        'notify': {
+            'timeout-minutes': 1,
+            'needs': 'build',
+            'steps': [
+                {
+                    'name': 'Notify on success',
+                    'if': "github.event_name != 'schedule'",
+                    'uses': 'joelwmale/webhook-action@master',
+                    'with': {
+                        'url': 'https://sl.da.gd/slackjack',
+                        'headers': '{"repository": "relrod/aut"}',
+                        'body': '{"channel": "#relrodtest", "username": "aut",'
+                                '"url": "https://github.com/${{ github.repository }}'
+                                '/actions/runs/${{ github.run_id }}", '
+                                '"text": "aut tests passed"}',
+                    },
+                },
                 {
                     'name': 'Notify on failure',
                     'if': "${{ failure() }} or github.event_name != 'schedule'",
@@ -54,6 +73,7 @@ YAML = {
                                 '/actions/runs/${{ github.run_id }}", '
                                 '"text": "aut tests failed"}',
                     },
+
                 },
             ],
         },

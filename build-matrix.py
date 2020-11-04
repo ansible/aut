@@ -16,9 +16,6 @@ YAML = {
         'build': {
             'runs-on': 'ubuntu-latest',
             'timeout-minutes': 20,  # TODO: config?
-            'outputs': {
-                'status': '${{ job.status }}',
-            },
             'strategy': {
                 # We want to see all failures.
                 'fail-fast': False,
@@ -56,8 +53,12 @@ YAML = {
             'runs-on': 'ubuntu-latest',
             'steps': [
                 {
+                    'name': 'debug',
+                    'run': 'echo ${{ needs.build.result }}'
+                },
+                {
                     'name': 'Notify on success',
-                    'if': "needs.build.outputs.status == 'Success' "
+                    'if': "needs.build.result == 'success' "
                           "&& github.event_name != 'schedule'",
                     'uses': 'joelwmale/webhook-action@master',
                     'with': {
@@ -71,7 +72,7 @@ YAML = {
                 },
                 {
                     'name': 'Notify on failure',
-                    'if': "needs.build.outputs.status != 'Success'",
+                    'if': "needs.build.result != 'success'",
                     'uses': 'joelwmale/webhook-action@master',
                     'with': {
                         'url': 'https://sl.da.gd/slackjack',

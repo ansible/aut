@@ -1,7 +1,5 @@
 jobs:
   build:
-    outputs:
-      status: ${{ job.status }}
     runs-on: ubuntu-latest
     steps:
     - name: Clone repo
@@ -152,7 +150,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - if: needs.build.outputs.status == 'Success' && github.event_name != 'schedule'
+    - name: debug
+      run: echo ${{ needs.build.result }}
+    - if: needs.build.result == 'success' && github.event_name != 'schedule'
       name: Notify on success
       uses: joelwmale/webhook-action@master
       with:
@@ -161,7 +161,7 @@ jobs:
           passed"}'
         headers: '{"repository": "relrod/aut"}'
         url: https://sl.da.gd/slackjack
-    - if: needs.build.outputs.status != 'Success'
+    - if: needs.build.result != 'success'
       name: Notify on failure
       uses: joelwmale/webhook-action@master
       with:

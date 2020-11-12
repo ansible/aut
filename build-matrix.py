@@ -46,46 +46,6 @@ YAML = {
                 },
             ],
         },
-        'notify': {
-            'if': '${{ always() }}',
-            'timeout-minutes': 1,
-            'needs': 'build',
-            'runs-on': 'ubuntu-latest',
-            'steps': [
-                {
-                    'name': 'debug',
-                    'run': 'echo ${{ needs.build.result }}'
-                },
-                {
-                    'name': 'Notify on success',
-                    'if': "needs.build.result == 'success' "
-                          "&& github.event_name != 'schedule'",
-                    'uses': 'joelwmale/webhook-action@master',
-                    'with': {
-                        'url': 'https://sl.da.gd/slackjack',
-                        'headers': '{"repository": "relrod/aut"}',
-                        'body': '{"channel": "#relrodtest", "username": "aut",'
-                                '"url": "https://github.com/${{ github.repository }}'
-                                '/actions/runs/${{ github.run_id }}", '
-                                '"text": "aut tests passed"}',
-                    },
-                },
-                {
-                    'name': 'Notify on failure',
-                    'if': "needs.build.result != 'success'",
-                    'uses': 'joelwmale/webhook-action@master',
-                    'with': {
-                        'url': 'https://sl.da.gd/slackjack',
-                        'headers': '{"repository": "relrod/aut"}',
-                        'body': '{"channel": "#relrodtest", "username": "aut",'
-                                '"url": "https://github.com/${{ github.repository }}'
-                                '/actions/runs/${{ github.run_id }}", '
-                                '"text": "aut tests failed"}',
-                    },
-
-                },
-            ],
-        },
     },
 }
 

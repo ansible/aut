@@ -145,32 +145,6 @@ jobs:
           product: ansible-base
           version: 2.10.3
     timeout-minutes: 20
-  notify:
-    if: ${{ always() }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: debug
-      run: echo ${{ needs.build.result }}
-    - if: needs.build.result == 'success' && github.event_name != 'schedule'
-      name: Notify on success
-      uses: joelwmale/webhook-action@master
-      with:
-        body: '{"channel": "#relrodtest", "username": "aut","url": "https://github.com/${{
-          github.repository }}/actions/runs/${{ github.run_id }}", "text": "aut tests
-          passed"}'
-        headers: '{"repository": "relrod/aut"}'
-        url: https://sl.da.gd/slackjack
-    - if: needs.build.result != 'success'
-      name: Notify on failure
-      uses: joelwmale/webhook-action@master
-      with:
-        body: '{"channel": "#relrodtest", "username": "aut","url": "https://github.com/${{
-          github.repository }}/actions/runs/${{ github.run_id }}", "text": "aut tests
-          failed"}'
-        headers: '{"repository": "relrod/aut"}'
-        url: https://sl.da.gd/slackjack
-    timeout-minutes: 1
 name: Ansible User Artifact Tests
 'on':
   pull_request: null

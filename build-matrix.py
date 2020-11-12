@@ -56,10 +56,16 @@ def main():
     for dockerfile, pres in data['dockerfiles'].items():
         for pre_dict in pres:
             for pre, premeta in pre_dict.items():
-                for product in ('ansible', 'ansible-base'):
+                for product in ('ansible', 'ansible-base', 'ansible-core'):
                     if premeta:
                         if product in premeta.get('exclude', []):
                             continue
+
+                    # Handle the case where we define a product, but no versions
+                    # for it.
+                    if data[product] is None:
+                        continue
+
                     for version in data[product]:
                         matrix_entry = {
                             'dockerfile': dockerfile,
@@ -73,6 +79,9 @@ def main():
                                 continue
 
                             if 'rc' in premeta.get('exclude', []) and 'rc' in version:
+                                continue
+
+                            if 'beta' in premeta.get('exclude', []) and 'beta' in version:
                                 continue
 
                             env = premeta.get('env', {})

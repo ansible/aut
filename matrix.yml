@@ -8,13 +8,17 @@ ansible-base:
   - 2.10.3
   #- 2.10.3rc1
 
+ansible-core:
+  #- 2.11.0b1
+
 # This is a mapping of dockerfile -> "pre" scripts
-# Note that the matrix can grow rapidly and we are limited to 200 matrix entries
-# in travis-ci.
+# Note that the matrix can grow rapidly and we are limited to 256 matrix entries
+# in github actions.
 #
 # Note any 'env:' entries must also be added to `docker run` in build-matrix.py
 #
-# `exclude` can be "ansible", "ansible-base", "rc", or any combination thereof.
+# `exclude` can be "ansible", "ansible-base", "rc", "beta", or any combination
+# thereof.
 dockerfiles:
   centos7:
     - pip:

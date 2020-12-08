@@ -18,127 +18,136 @@ jobs:
         - dockerfile: centos7
           pre: pip
           product: ansible
-          version: 2.8.17
+          version: 2.8.18rc1
         - dockerfile: centos7
           pre: pip
           product: ansible
-          version: 2.9.15
+          version: 2.9.16rc1
         - dockerfile: centos7
           pre: pip
+          product: ansible-base
+          version: 2.10.3
+        - dockerfile: centos7
+          pre: pip
+          product: ansible-base
+          version: 2.10.4rc1
+        - dockerfile: centos7
+          pre: tar
+          product: ansible
+          version: 2.8.18rc1
+        - dockerfile: centos7
+          pre: tar
+          product: ansible
+          version: 2.9.16rc1
+        - dockerfile: centos7
+          pre: tar
           product: ansible-base
           version: 2.10.3
         - dockerfile: centos7
           pre: tar
-          product: ansible
-          version: 2.8.17
-        - dockerfile: centos7
-          pre: tar
-          product: ansible
-          version: 2.9.15
-        - dockerfile: centos7
-          pre: tar
           product: ansible-base
-          version: 2.10.3
-        - dockerfile: centos7
-          pre: rpm
-          product: ansible
-          version: 2.8.17
-        - dockerfile: centos7
-          pre: rpm
-          product: ansible
-          version: 2.9.15
+          version: 2.10.4rc1
         - dockerfile: centos8
           pre: pip
           product: ansible
-          version: 2.8.17
+          version: 2.8.18rc1
         - dockerfile: centos8
           pre: pip
           product: ansible
-          version: 2.9.15
+          version: 2.9.16rc1
         - dockerfile: centos8
           pre: pip
           product: ansible-base
           version: 2.10.3
         - dockerfile: centos8
-          pre: tar
-          product: ansible
-          version: 2.8.17
+          pre: pip
+          product: ansible-base
+          version: 2.10.4rc1
         - dockerfile: centos8
           pre: tar
           product: ansible
-          version: 2.9.15
+          version: 2.8.18rc1
         - dockerfile: centos8
           pre: tar
+          product: ansible
+          version: 2.9.16rc1
+        - dockerfile: centos8
+          pre: tar
+          product: ansible-base
+          version: 2.10.3
+        - dockerfile: centos8
+          pre: tar
+          product: ansible-base
+          version: 2.10.4rc1
+        - dockerfile: ubuntu2004
+          pre: pip
+          product: ansible
+          version: 2.8.18rc1
+        - dockerfile: ubuntu2004
+          pre: pip
+          product: ansible
+          version: 2.9.16rc1
+        - dockerfile: ubuntu2004
+          pre: pip
           product: ansible-base
           version: 2.10.3
         - dockerfile: ubuntu2004
           pre: pip
-          product: ansible
-          version: 2.8.17
+          product: ansible-base
+          version: 2.10.4rc1
         - dockerfile: ubuntu2004
-          pre: pip
+          pre: tar
           product: ansible
-          version: 2.9.15
+          version: 2.8.18rc1
         - dockerfile: ubuntu2004
-          pre: pip
+          pre: tar
+          product: ansible
+          version: 2.9.16rc1
+        - dockerfile: ubuntu2004
+          pre: tar
           product: ansible-base
           version: 2.10.3
         - dockerfile: ubuntu2004
           pre: tar
-          product: ansible
-          version: 2.8.17
-        - dockerfile: ubuntu2004
-          pre: tar
-          product: ansible
-          version: 2.9.15
-        - dockerfile: ubuntu2004
-          pre: tar
           product: ansible-base
-          version: 2.10.3
+          version: 2.10.4rc1
         - dockerfile: ubuntu1804
           pre: pip
           product: ansible
-          version: 2.8.17
+          version: 2.8.18rc1
         - dockerfile: ubuntu1804
           pre: pip
           product: ansible
-          version: 2.9.15
+          version: 2.9.16rc1
         - dockerfile: ubuntu1804
           pre: pip
           product: ansible-base
           version: 2.10.3
         - dockerfile: ubuntu1804
-          pre: tar
-          product: ansible
-          version: 2.8.17
+          pre: pip
+          product: ansible-base
+          version: 2.10.4rc1
         - dockerfile: ubuntu1804
           pre: tar
           product: ansible
-          version: 2.9.15
+          version: 2.8.18rc1
+        - dockerfile: ubuntu1804
+          pre: tar
+          product: ansible
+          version: 2.9.16rc1
         - dockerfile: ubuntu1804
           pre: tar
           product: ansible-base
           version: 2.10.3
-        - PPA: ansible/ansible-2.8
-          dockerfile: ubuntu1804
-          pre: ppa
-          product: ansible
-          version: 2.8.17
-        - PPA: ansible/ansible-2.9
-          dockerfile: ubuntu1804
-          pre: ppa
-          product: ansible
-          version: 2.9.15
+        - dockerfile: ubuntu1804
+          pre: tar
+          product: ansible-base
+          version: 2.10.4rc1
         - PPA: ansible/ansible-2.10
           dockerfile: ubuntu1804
           pre: ppa
           product: ansible-base
           version: 2.10.3
-        - PPA: ansible/ansible
-          dockerfile: ubuntu1804
-          pre: ppa
-          product: ansible
-          version: 2.9.15
         - PPA: ansible/ansible
           dockerfile: ubuntu1804
           pre: ppa

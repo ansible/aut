@@ -26,10 +26,6 @@ jobs:
         - dockerfile: centos7
           pre: pip
           product: ansible-base
-          version: 2.10.3
-        - dockerfile: centos7
-          pre: pip
-          product: ansible-base
           version: 2.10.4rc1
         - dockerfile: centos7
           pre: tar
@@ -42,10 +38,6 @@ jobs:
         - dockerfile: centos7
           pre: tar
           product: ansible-base
-          version: 2.10.3
-        - dockerfile: centos7
-          pre: tar
-          product: ansible-base
           version: 2.10.4rc1
         - dockerfile: centos8
           pre: pip
@@ -55,10 +47,6 @@ jobs:
           pre: pip
           product: ansible
           version: 2.9.16rc1
-        - dockerfile: centos8
-          pre: pip
-          product: ansible-base
-          version: 2.10.3
         - dockerfile: centos8
           pre: pip
           product: ansible-base
@@ -74,10 +62,6 @@ jobs:
         - dockerfile: centos8
           pre: tar
           product: ansible-base
-          version: 2.10.3
-        - dockerfile: centos8
-          pre: tar
-          product: ansible-base
           version: 2.10.4rc1
         - dockerfile: ubuntu2004
           pre: pip
@@ -87,10 +71,6 @@ jobs:
           pre: pip
           product: ansible
           version: 2.9.16rc1
-        - dockerfile: ubuntu2004
-          pre: pip
-          product: ansible-base
-          version: 2.10.3
         - dockerfile: ubuntu2004
           pre: pip
           product: ansible-base
@@ -106,10 +86,6 @@ jobs:
         - dockerfile: ubuntu2004
           pre: tar
           product: ansible-base
-          version: 2.10.3
-        - dockerfile: ubuntu2004
-          pre: tar
-          product: ansible-base
           version: 2.10.4rc1
         - dockerfile: ubuntu1804
           pre: pip
@@ -119,10 +95,6 @@ jobs:
           pre: pip
           product: ansible
           version: 2.9.16rc1
-        - dockerfile: ubuntu1804
-          pre: pip
-          product: ansible-base
-          version: 2.10.3
         - dockerfile: ubuntu1804
           pre: pip
           product: ansible-base
@@ -138,21 +110,7 @@ jobs:
         - dockerfile: ubuntu1804
           pre: tar
           product: ansible-base
-          version: 2.10.3
-        - dockerfile: ubuntu1804
-          pre: tar
-          product: ansible-base
           version: 2.10.4rc1
-        - PPA: ansible/ansible-2.10
-          dockerfile: ubuntu1804
-          pre: ppa
-          product: ansible-base
-          version: 2.10.3
-        - PPA: ansible/ansible
-          dockerfile: ubuntu1804
-          pre: ppa
-          product: ansible-base
-          version: 2.10.3
     timeout-minutes: 20
 name: Ansible User Artifact Tests
 'on':

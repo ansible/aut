@@ -5,4 +5,4 @@
 
     - assert:
         that:
-          - "'load average:' in res.stdout"
+          - "'load average' in res.stdout"

@@ -27,7 +27,7 @@ YAML = {
                 {
                     'name': 'Clone repo',
                     'uses': 'actions/checkout@v2',
-                 },
+                },
                 {
                     'name': 'Build container image',
                     'run': 'docker build -t "aut-${{ matrix.dockerfile }}" '
@@ -46,14 +46,39 @@ YAML = {
                 },
             ],
         },
+        'macos-build': {
+            # This is kind of a hack, it's not a "dockerfile" but we use the key
+            'runs-on': '${{ matrix.dockerfile }}',
+            'timeout-minutes': 20,  # TODO: config?
+            'strategy': {
+                # We want to see all failures.
+                'fail-fast': False,
+                'matrix': {
+                    'include': [],
+                },
+            },
+            'steps': [
+                {
+                    'name': 'Clone repo',
+                    'uses': 'actions/checkout@v2',
+                },
+                {
+                    'name': 'Run tests',
+                    'run': 'bash entrypoint.sh',
+                    'env': {
+                        'PRE': '${{ matrix.pre }}',
+                        'PRODUCT': '${{ matrix.product }}',
+                        'VERSION': '${{ matrix.version }}',
+                        'PPA': '${{ matrix.ppa }}',
+                    },
+                },
+            ],
+        },
     },
 }
 
-def main():
-    with open('matrix.yml', 'r') as f:
-        data = yaml.safe_load(f.read())
-
-    for dockerfile, pres in data['dockerfiles'].items():
+def fill_matrix(job, data, entries):
+    for os_env, pres in entries.items():
         for pre_dict in pres:
             for pre, premeta in pre_dict.items():
                 for product in ('ansible', 'ansible-base', 'ansible-core'):
@@ -68,7 +93,7 @@ def main():
 
                     for version in data[product]:
                         matrix_entry = {
-                            'dockerfile': dockerfile,
+                            'dockerfile': os_env,
                             'version': version,
                             'product': product,
                             'pre': pre,
@@ -88,7 +113,15 @@ def main():
                             if env:
                                 for k, v in env.items():
                                     matrix_entry[k] = v
-                        YAML['jobs']['build']['strategy']['matrix']['include'].append(matrix_entry)
+                        YAML['jobs'][job]['strategy']['matrix']['include'].append(matrix_entry)
+
+
+def main():
+    with open('matrix.yml', 'r') as f:
+        data = yaml.safe_load(f.read())
+
+    fill_matrix('build', data, data['dockerfiles'])
+    fill_matrix('macos-build', data, data['macOS'])
 
     print(yaml.dump(YAML))
 

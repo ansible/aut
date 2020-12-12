@@ -64,3 +64,13 @@ dockerfiles:
           - rc
         env:
           PPA: ansible/ansible
+
+# macOS is a bit of a special case, we don't do any docker stuff, just skip
+# straight to pre scripts.
+macOS:
+  macos-11.0:
+    - pip:
+    - tar:
+  macos-10.15:
+    - pip:
+    - tar:

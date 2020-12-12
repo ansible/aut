@@ -257,38 +257,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-        - dockerfile: macos-11.0
-          pre: pip
-          product: ansible
-          version: 2.9.15
-        - dockerfile: macos-11.0
-          pre: pip
-          product: ansible
-          version: 2.9.16rc1
-        - dockerfile: macos-11.0
-          pre: pip
-          product: ansible-base
-          version: 2.10.3
-        - dockerfile: macos-11.0
-          pre: pip
-          product: ansible-base
-          version: 2.10.4rc1
-        - dockerfile: macos-11.0
-          pre: tar
-          product: ansible
-          version: 2.9.15
-        - dockerfile: macos-11.0
-          pre: tar
-          product: ansible
-          version: 2.9.16rc1
-        - dockerfile: macos-11.0
-          pre: tar
-          product: ansible-base
-          version: 2.10.3
-        - dockerfile: macos-11.0
-          pre: tar
-          product: ansible-base
-          version: 2.10.4rc1
         - dockerfile: macos-10.15
           pre: pip
           product: ansible

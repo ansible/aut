@@ -70,11 +70,12 @@ dockerfiles:
 # We skip 2.8.x, because it doesn't support python 3.8 on macOS which is what
 # macOS likes to default to.
 macOS:
-  macos-11.0:
-    - pip:
-        version_re: "^(?!2\\.8)"
-    - tar:
-        version_re: "^(?!2\\.8)"
+  # These are SUPER slow to spawn for some reason. :-(
+  #macos-11.0:
+  #  - pip:
+  #      version_re: "^(?!2\\.8)"
+  #  - tar:
+  #      version_re: "^(?!2\\.8)"
   macos-10.15:
     - pip:
         version_re: "^(?!2\\.8)"

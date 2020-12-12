@@ -12,4 +12,10 @@ if [[ $? -ne 0 ]]; then
   PIP="$(which pip-3)"
 fi
 
-$PIP install $PRODUCT==$VERSION
+# On macOS we want to install with --user. On everything else, we run as root.
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  $PIP install --user $PRODUCT==$VERSION
+else
+  $PIP install $PRODUCT==$VERSION
+fi

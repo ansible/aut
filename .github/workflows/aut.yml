@@ -119,6 +119,110 @@ jobs:
           pre: tar
           product: ansible-base
           version: 2.10.4rc1
+        - dockerfile: ubi7
+          pre: pip
+          product: ansible
+          version: 2.8.17
+        - dockerfile: ubi7
+          pre: pip
+          product: ansible
+          version: 2.9.15
+        - dockerfile: ubi7
+          pre: pip
+          product: ansible
+          version: 2.8.18rc1
+        - dockerfile: ubi7
+          pre: pip
+          product: ansible
+          version: 2.9.16rc1
+        - dockerfile: ubi7
+          pre: pip
+          product: ansible-base
+          version: 2.10.3
+        - dockerfile: ubi7
+          pre: pip
+          product: ansible-base
+          version: 2.10.4rc1
+        - dockerfile: ubi7
+          pre: tar
+          product: ansible
+          version: 2.8.17
+        - dockerfile: ubi7
+          pre: tar
+          product: ansible
+          version: 2.9.15
+        - dockerfile: ubi7
+          pre: tar
+          product: ansible
+          version: 2.8.18rc1
+        - dockerfile: ubi7
+          pre: tar
+          product: ansible
+          version: 2.9.16rc1
+        - dockerfile: ubi7
+          pre: tar
+          product: ansible-base
+          version: 2.10.3
+        - dockerfile: ubi7
+          pre: tar
+          product: ansible-base
+          version: 2.10.4rc1
+        - dockerfile: ubi7
+          pre: rpm
+          product: ansible
+          version: 2.8.17
+        - dockerfile: ubi7
+          pre: rpm
+          product: ansible
+          version: 2.9.15
+        - dockerfile: ubi8
+          pre: pip
+          product: ansible
+          version: 2.8.17
+        - dockerfile: ubi8
+          pre: pip
+          product: ansible
+          version: 2.9.15
+        - dockerfile: ubi8
+          pre: pip
+          product: ansible
+          version: 2.8.18rc1
+        - dockerfile: ubi8
+          pre: pip
+          product: ansible
+          version: 2.9.16rc1
+        - dockerfile: ubi8
+          pre: pip
+          product: ansible-base
+          version: 2.10.3
+        - dockerfile: ubi8
+          pre: pip
+          product: ansible-base
+          version: 2.10.4rc1
+        - dockerfile: ubi8
+          pre: tar
+          product: ansible
+          version: 2.8.17
+        - dockerfile: ubi8
+          pre: tar
+          product: ansible
+          version: 2.9.15
+        - dockerfile: ubi8
+          pre: tar
+          product: ansible
+          version: 2.8.18rc1
+        - dockerfile: ubi8
+          pre: tar
+          product: ansible
+          version: 2.9.16rc1
+        - dockerfile: ubi8
+          pre: tar
+          product: ansible-base
+          version: 2.10.3
+        - dockerfile: ubi8
+          pre: tar
+          product: ansible-base
+          version: 2.10.4rc1
         - dockerfile: ubuntu2004
           pre: pip
           product: ansible

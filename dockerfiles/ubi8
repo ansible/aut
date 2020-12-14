@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 
 RUN \
-  microdnf install -y python3-pip wget which && \
+  microdnf install -y procps-ng python3-pip wget which && \
   microdnf clean all
 
 COPY . /opt

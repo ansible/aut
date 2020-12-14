@@ -3,7 +3,8 @@ FROM registry.access.redhat.com/ubi7/ubi
 RUN \
   yum update -y && \
   yum install -y https://da.gd/epel7?.rpm && \
-  yum install -y procps-ng python-pip wget which && \
+  yum install -y http://mirror.centos.org/centos-7/7/os/x86_64/Packages/python-virtualenv-15.1.0-4.el7_7.noarch.rpm \
+    procps-ng python-pip wget which && \
   yum clean all
 
 COPY . /opt

@@ -30,6 +30,16 @@ dockerfiles:
   centos8:
     - pip:
     - tar:
+  ubi7:
+    - pip:
+    - tar:
+    - rpm:
+        exclude:
+          - ansible-base
+          - rc
+  ubi8:
+    - pip:
+    - tar:
   ubuntu2004:
     - pip:
     - tar:

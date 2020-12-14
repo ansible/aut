@@ -1,0 +1,12 @@
+FROM registry.access.redhat.com/ubi7/ubi-minimal
+
+RUN \
+  curl -Lo /tmp/epel-release.rpm https://da.gd/epel7 && \
+  rpm -ivh /tmp/epel-release.rpm && \
+  rm /tmp/epel-release.rpm && \
+  microdnf install -y python-pip wget which && \
+  microdnf clean all
+
+COPY . /opt
+
+ENTRYPOINT ["bash", "/opt/entrypoint.sh"]

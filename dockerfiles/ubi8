@@ -1,8 +1,9 @@
-FROM registry.access.redhat.com/ubi8/ubi-minimal
+FROM registry.access.redhat.com/ubi8/ubi
 
 RUN \
-  microdnf install -y procps-ng python3-pip wget which && \
-  microdnf clean all
+  yum update -y && \
+  yum install -y procps-ng python3-pip wget && \
+  yum clean all
 
 COPY . /opt
 

@@ -2,7 +2,8 @@ FROM registry.access.redhat.com/ubi7/ubi
 
 RUN \
   yum update -y && \
-  yum install -y https://da.gd/epel7?.rpm procps-ng python-pip wget which && \
+  yum install -y https://da.gd/epel7?.rpm && \
+  yum install -y procps-ng python-pip wget which && \
   yum clean all
 
 COPY . /opt

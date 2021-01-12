@@ -106,7 +106,7 @@ def fill_matrix(job, data, entries):
                             if 'rc' in premeta.get('exclude', []) and 'rc' in version:
                                 continue
 
-                            if 'beta' in premeta.get('exclude', []) and 'beta' in version:
+                            if 'beta' in premeta.get('exclude', []) and 'b' in version:
                                 continue
 
                             env = premeta.get('env', {})

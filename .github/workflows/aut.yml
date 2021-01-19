@@ -26,10 +26,6 @@ jobs:
         - dockerfile: centos7
           pre: pip
           product: ansible-base
-          version: 2.10.4
-        - dockerfile: centos7
-          pre: pip
-          product: ansible-base
           version: 2.10.5
         - dockerfile: centos7
           pre: tar
@@ -39,10 +35,6 @@ jobs:
           pre: tar
           product: ansible
           version: 2.9.17
-        - dockerfile: centos7
-          pre: tar
-          product: ansible-base
-          version: 2.10.4
         - dockerfile: centos7
           pre: tar
           product: ansible-base
@@ -66,10 +58,6 @@ jobs:
         - dockerfile: centos8
           pre: pip
           product: ansible-base
-          version: 2.10.4
-        - dockerfile: centos8
-          pre: pip
-          product: ansible-base
           version: 2.10.5
         - dockerfile: centos8
           pre: tar
@@ -79,10 +67,6 @@ jobs:
           pre: tar
           product: ansible
           version: 2.9.17
-        - dockerfile: centos8
-          pre: tar
-          product: ansible-base
-          version: 2.10.4
         - dockerfile: centos8
           pre: tar
           product: ansible-base
@@ -98,10 +82,6 @@ jobs:
         - dockerfile: ubi7
           pre: pip
           product: ansible-base
-          version: 2.10.4
-        - dockerfile: ubi7
-          pre: pip
-          product: ansible-base
           version: 2.10.5
         - dockerfile: ubi7
           pre: tar
@@ -111,10 +91,6 @@ jobs:
           pre: tar
           product: ansible
           version: 2.9.17
-        - dockerfile: ubi7
-          pre: tar
-          product: ansible-base
-          version: 2.10.4
         - dockerfile: ubi7
           pre: tar
           product: ansible-base
@@ -138,10 +114,6 @@ jobs:
         - dockerfile: ubi8
           pre: pip
           product: ansible-base
-          version: 2.10.4
-        - dockerfile: ubi8
-          pre: pip
-          product: ansible-base
           version: 2.10.5
         - dockerfile: ubi8
           pre: tar
@@ -151,10 +123,6 @@ jobs:
           pre: tar
           product: ansible
           version: 2.9.17
-        - dockerfile: ubi8
-          pre: tar
-          product: ansible-base
-          version: 2.10.4
         - dockerfile: ubi8
           pre: tar
           product: ansible-base
@@ -170,10 +138,6 @@ jobs:
         - dockerfile: ubuntu2004
           pre: pip
           product: ansible-base
-          version: 2.10.4
-        - dockerfile: ubuntu2004
-          pre: pip
-          product: ansible-base
           version: 2.10.5
         - dockerfile: ubuntu2004
           pre: tar
@@ -183,10 +147,6 @@ jobs:
           pre: tar
           product: ansible
           version: 2.9.17
-        - dockerfile: ubuntu2004
-          pre: tar
-          product: ansible-base
-          version: 2.10.4
         - dockerfile: ubuntu2004
           pre: tar
           product: ansible-base
@@ -202,10 +162,6 @@ jobs:
         - dockerfile: ubuntu1804
           pre: pip
           product: ansible-base
-          version: 2.10.4
-        - dockerfile: ubuntu1804
-          pre: pip
-          product: ansible-base
           version: 2.10.5
         - dockerfile: ubuntu1804
           pre: tar
@@ -215,10 +171,6 @@ jobs:
           pre: tar
           product: ansible
           version: 2.9.17
-        - dockerfile: ubuntu1804
-          pre: tar
-          product: ansible-base
-          version: 2.10.4
         - dockerfile: ubuntu1804
           pre: tar
           product: ansible-base
@@ -237,22 +189,12 @@ jobs:
           dockerfile: ubuntu1804
           pre: ppa
           product: ansible-base
-          version: 2.10.4
-        - PPA: ansible/ansible-2.10
-          dockerfile: ubuntu1804
-          pre: ppa
-          product: ansible-base
           version: 2.10.5
         - PPA: ansible/ansible
           dockerfile: ubuntu1804
           pre: ppa
           product: ansible
           version: 2.9.17
-        - PPA: ansible/ansible
-          dockerfile: ubuntu1804
-          pre: ppa
-          product: ansible-base
-          version: 2.10.4
         - PPA: ansible/ansible
           dockerfile: ubuntu1804
           pre: ppa
@@ -282,19 +224,11 @@ jobs:
         - dockerfile: macos-10.15
           pre: pip
           product: ansible-base
-          version: 2.10.4
-        - dockerfile: macos-10.15
-          pre: pip
-          product: ansible-base
           version: 2.10.5
         - dockerfile: macos-10.15
           pre: tar
           product: ansible
           version: 2.9.17
-        - dockerfile: macos-10.15
-          pre: tar
-          product: ansible-base
-          version: 2.10.4
         - dockerfile: macos-10.15
           pre: tar
           product: ansible-base

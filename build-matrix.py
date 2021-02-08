@@ -36,7 +36,7 @@ YAML = {
                 {
                     'name': 'Build container image',
                     'run': 'docker build -t "aut-${{ matrix.dockerfile }}" '
-                           '${{ matrix.build_args }}'
+                           '${{ matrix.build_args }} '
                            '-f "dockerfiles/${{ matrix.dockerfile }}" .',
                 },
                 {

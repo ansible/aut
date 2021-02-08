@@ -1,12 +1,14 @@
 jobs:
   build:
+    name: ${{ matrix.dockerfile }}, ${{ matrix.pre }}, ${{ matrix.product }}, ${{
+      matrix.version }}
     runs-on: ubuntu-latest
     steps:
     - name: Clone repo
       uses: actions/checkout@v2
     - name: Build container image
-      run: docker build -t "aut-${{ matrix.dockerfile }}" ${{ matrix.build_args }}-f
-        "dockerfiles/${{ matrix.dockerfile }}" .
+      run: docker build -t "aut-${{ matrix.dockerfile }}" ${{ matrix.build_args }}
+        -f "dockerfiles/${{ matrix.dockerfile }}" .
     - name: Run tests
       run: docker run -t -e PYTHONPATH="/opt/pre/${{ matrix.product }}-${{ matrix.version
         }}/lib" -e PRE="${{ matrix.pre }}" -e PRODUCT="${{ matrix.product }}" -e VERSION="${{
@@ -293,6 +295,8 @@ jobs:
           version: 2.10.5
     timeout-minutes: 20
   macos-build:
+    name: ${{ matrix.dockerfile }}, ${{ matrix.pre }}, ${{ matrix.product }}, ${{
+      matrix.version }}
     runs-on: ${{ matrix.dockerfile }}
     steps:
     - name: Clone repo

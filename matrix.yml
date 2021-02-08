@@ -22,6 +22,7 @@ ansible-core:
 dockerfiles:
   centos7:
     - pip:
+    - pip-latest:
     - tar:
     - rpm:
         exclude:
@@ -29,6 +30,7 @@ dockerfiles:
           - rc
   centos8:
     - pip:
+    - pip-latest:
     - tar:
   ubi7:
     - pip:
@@ -45,6 +47,7 @@ dockerfiles:
     - tar:
   ubuntu1804:
     - pip:
+    - pip-latest:
     - tar:
     - ppa:
         version_re: ^2\.8

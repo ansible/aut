@@ -29,6 +29,18 @@ jobs:
           product: ansible-base
           version: 2.10.5
         - dockerfile: centos7
+          pre: pip-latest
+          product: ansible
+          version: 2.8.18
+        - dockerfile: centos7
+          pre: pip-latest
+          product: ansible
+          version: 2.9.17
+        - dockerfile: centos7
+          pre: pip-latest
+          product: ansible-base
+          version: 2.10.5
+        - dockerfile: centos7
           pre: tar
           product: ansible
           version: 2.8.18
@@ -58,6 +70,18 @@ jobs:
           version: 2.9.17
         - dockerfile: centos8
           pre: pip
+          product: ansible-base
+          version: 2.10.5
+        - dockerfile: centos8
+          pre: pip-latest
+          product: ansible
+          version: 2.8.18
+        - dockerfile: centos8
+          pre: pip-latest
+          product: ansible
+          version: 2.9.17
+        - dockerfile: centos8
+          pre: pip-latest
           product: ansible-base
           version: 2.10.5
         - dockerfile: centos8
@@ -162,6 +186,18 @@ jobs:
           version: 2.9.17
         - dockerfile: ubuntu1804
           pre: pip
+          product: ansible-base
+          version: 2.10.5
+        - dockerfile: ubuntu1804
+          pre: pip-latest
+          product: ansible
+          version: 2.8.18
+        - dockerfile: ubuntu1804
+          pre: pip-latest
+          product: ansible
+          version: 2.9.17
+        - dockerfile: ubuntu1804
+          pre: pip-latest
           product: ansible-base
           version: 2.10.5
         - dockerfile: ubuntu1804

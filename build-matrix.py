@@ -34,6 +34,7 @@ YAML = {
                 {
                     'name': 'Build container image',
                     'run': 'docker build -t "aut-${{ matrix.dockerfile }}" '
+                           '${{ matrix.build_args }}'
                            '-f "dockerfiles/${{ matrix.dockerfile }}" .',
                 },
                 {
@@ -102,6 +103,7 @@ def fill_matrix(job, data, entries):
                             'version': version,
                             'product': product,
                             'pre': pre,
+                            'build_args': '',
                         }
                         if premeta:
                             version_re = premeta.get('version_re', '')
@@ -113,6 +115,12 @@ def fill_matrix(job, data, entries):
 
                             if 'beta' in premeta.get('exclude', []) and 'b' in version:
                                 continue
+
+                            build_args = premeta.get('build-args')
+                            if build_args:
+                                for k, v in build_args.items():
+                                    matrix_entry['build_args'] += \
+                                        ' --build-arg %s=%s' % (k, v)
 
                             env = premeta.get('env', {})
                             if env:

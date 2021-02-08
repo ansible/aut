@@ -19,10 +19,16 @@ ansible-core:
 #
 # `exclude` can be "ansible", "ansible-base", "rc", "beta", or any combination
 # thereof.
+#
+# `build-args` will add a new matrix entry, passing the given build args to
+# `docker build`. When this is specified, the pre is skipped in the default
+# case (and ONLY run with the build args specified).
 dockerfiles:
   centos7:
     - pip:
     - pip-latest:
+        build-args:
+          WANT_SYSTEM_PIP: "false"
     - tar:
     - rpm:
         exclude:
@@ -31,6 +37,8 @@ dockerfiles:
   centos8:
     - pip:
     - pip-latest:
+        build-args:
+          WANT_SYSTEM_PIP: "false"
     - tar:
   ubi7:
     - pip:
@@ -48,6 +56,8 @@ dockerfiles:
   ubuntu1804:
     - pip:
     - pip-latest:
+        build-args:
+          WANT_SYSTEM_PIP: "false"
     - tar:
     - ppa:
         version_re: ^2\.8

@@ -1,8 +1,11 @@
 FROM centos:7
 
+ARG WANT_SYSTEM_PIP=true
+
 RUN yum -y update && \
   yum -y install epel-release && \
-  yum -y install python-pip wget which && \
+  yum -y install wget which && \
+  ([[ "$WANT_SYSTEM_PIP" == "true" ]] && yum -y install python-pip || true) && \
   yum clean all
 
 COPY . /opt

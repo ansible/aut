@@ -1,8 +1,11 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
+ARG WANT_SYSTEM_PIP=true
+
 RUN \
   yum update -y && \
-  yum install -y procps-ng python3-pip wget && \
+  yum install -y procps-ng wget && \
+  ([[ "$WANT_SYSTEM_PIP" == "true" ]] && yum -y install python3-pip || true) && \
   yum clean all
 
 COPY . /opt

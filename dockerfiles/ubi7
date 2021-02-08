@@ -1,10 +1,13 @@
 FROM registry.access.redhat.com/ubi7/ubi
 
+ARG WANT_SYSTEM_PIP=true
+
 RUN \
   yum update -y && \
   yum install -y https://da.gd/epel7?.rpm && \
   yum install -y http://mirror.centos.org/centos-7/7/os/x86_64/Packages/python-virtualenv-15.1.0-4.el7_7.noarch.rpm \
-    procps-ng python-pip wget which && \
+    procps-ng wget which && \
+  ([[ "$WANT_SYSTEM_PIP" == "true" ]] && yum -y install python-pip || true) && \
   yum clean all
 
 COPY . /opt

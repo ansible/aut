@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 
 import re
+import sys
 import yaml
+
+MAX_MATRIX_ENTRIES = 256
 
 YAML = {
     'name': 'Ansible User Artifact Tests',
@@ -125,7 +128,14 @@ def main():
     fill_matrix('build', data, data['dockerfiles'])
     fill_matrix('macos-build', data, data['macOS'])
 
+    total_entries = \
+        len(YAML['jobs']['build']['strategy']['matrix']['include']) + \
+        len(YAML['jobs']['macos-build']['strategy']['matrix']['include'])
+
     print(yaml.dump(YAML))
+    print(
+        'Matrix entries in use: %d/%d' % (total_entries, MAX_MATRIX_ENTRIES),
+        file=sys.stderr)
 
 if __name__ == '__main__':
     main()

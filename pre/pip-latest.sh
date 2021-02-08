@@ -4,7 +4,7 @@ set -eux
 
 source pip-common.sh
 
-if [[ "$PIP" != "" && $PIP --version ]]; then
+if [[ "$PIP" != "" ]]; then
   echo "pip already installed, refusing to install via get-pip.py"
   echo "This pre script is only compatible with dockerfiles that don't install"
   echo "pip from system repositories."

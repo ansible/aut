@@ -1,38 +1,20 @@
 #!/usr/bin/env bash
 
-set -xu
+set -eux
 
-PIP="$(which pip)"
-
-if [[ $? -ne 0 ]]; then
-  PIP="$(which pip3)"
-fi
-
-if [[ $? -ne 0 ]]; then
-  PIP="$(which pip-3)"
-fi
-
-set -e
+source pip-common.sh
 
 wget "https://releases.ansible.com/$PRODUCT/$PRODUCT-$VERSION.tar.gz"
-tar -xvf "$PRODUCT-$VERSION.tar.gz"
+tar -xf "$PRODUCT-$VERSION.tar.gz"
 
-set +e
+$PIP install jinja2 pyyaml
 
-# On macOS we need to sudo. On everything else, we run as root.
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  set -e
-  sudo $PIP install jinja2 pyyaml
-  #sudo ln -s "$(pwd)/$PRODUCT-$VERSION"/bin/* /usr/local/bin/
   pushd "$(pwd)/$PRODUCT-$VERSION"
-  sudo python3 setup.py install
+    sudo python3 setup.py install
   popd
-  set +e
 else
-  set -e
-  $PIP install jinja2 pyyaml
   ln -s "$(pwd)/$PRODUCT-$VERSION"/bin/* /usr/bin/
-  set +e
 fi
 
 set +e

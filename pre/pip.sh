@@ -1,24 +1,7 @@
 #!/usr/bin/env bash
 
-set -xu
+set -eux
 
-# See what pip is called on the platform
+source pip-common.sh
 
-PIP="$(which pip3)"
-
-if [[ $? -ne 0 ]]; then
-  PIP="$(which pip-3)"
-fi
-
-if [[ $? -ne 0 ]]; then
-  PIP="$(which pip)"
-fi
-
-# On macOS we need to sudo. On everything else, we run as root.
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  PIP="sudo $PIP"
-fi
-
-set -e
-
-$PIP install $PRODUCT==$VERSION
+$PIP install 'cryptography >=2.5,<3.4' $PRODUCT==$VERSION

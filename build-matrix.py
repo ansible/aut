@@ -42,6 +42,7 @@ YAML = {
                            '-e PRODUCT="${{ matrix.product }}" '
                            '-e VERSION="${{ matrix.version }}" '
                            '-e PPA="${{ matrix.ppa }}" '
+                           '-e DOCKERFILE="${{ matrix.dockerfile }}" '
                            '"aut-${{ matrix.dockerfile }}"'
                 },
             ],
@@ -70,6 +71,7 @@ YAML = {
                         'PRODUCT': '${{ matrix.product }}',
                         'VERSION': '${{ matrix.version }}',
                         'PPA': '${{ matrix.ppa }}',
+                        'DOCKERFILE': '${{ matrix.dockerfile }}',
                     },
                 },
             ],

@@ -10,7 +10,8 @@ jobs:
     - name: Run tests
       run: docker run -t -e PYTHONPATH="/opt/pre/${{ matrix.product }}-${{ matrix.version
         }}/lib" -e PRE="${{ matrix.pre }}" -e PRODUCT="${{ matrix.product }}" -e VERSION="${{
-        matrix.version }}" -e PPA="${{ matrix.ppa }}" "aut-${{ matrix.dockerfile }}"
+        matrix.version }}" -e PPA="${{ matrix.ppa }}" -e DOCKERFILE="${{ matrix.dockerfile
+        }}" "aut-${{ matrix.dockerfile }}"
     strategy:
       fail-fast: false
       matrix:
@@ -207,6 +208,7 @@ jobs:
     - name: Clone repo
       uses: actions/checkout@v2
     - env:
+        DOCKERFILE: ${{ matrix.dockerfile }}
         PPA: ${{ matrix.ppa }}
         PRE: ${{ matrix.pre }}
         PRODUCT: ${{ matrix.product }}

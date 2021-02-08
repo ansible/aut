@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -xu
+set +e
 
 # See what pip is called on the platform
 
@@ -18,3 +19,5 @@ fi
 if [[ "$(uname -s)" == "Darwin" ]]; then
   PIP="sudo $PIP"
 fi
+
+set -e

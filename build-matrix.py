@@ -19,6 +19,8 @@ YAML = {
         'build': {
             'runs-on': 'ubuntu-latest',
             'timeout-minutes': 20,  # TODO: config?
+            'name': '${{ matrix.dockerfile }}, ${{ matrix.pre }}, '
+                    '${{ matrix.product }}, ${{ matrix.version }}',
             'strategy': {
                 # We want to see all failures.
                 'fail-fast': False,
@@ -55,6 +57,8 @@ YAML = {
             # This is kind of a hack, it's not a "dockerfile" but we use the key
             'runs-on': '${{ matrix.dockerfile }}',
             'timeout-minutes': 20,  # TODO: config?
+            'name': '${{ matrix.dockerfile }}, ${{ matrix.pre }}, '
+                    '${{ matrix.product }}, ${{ matrix.version }}',
             'strategy': {
                 # We want to see all failures.
                 'fail-fast': False,

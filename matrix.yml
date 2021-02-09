@@ -49,12 +49,12 @@ dockerfiles:
   ubuntu2004:
     - pip:
     - tar:
-    - ppa:
-        version_re: ^2\.10
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.10
+    #- ppa:
+    #    version_re: ^2\.10
+    #    exclude:
+    #      - rc
+    #    env:
+    #      PPA: ansible/ansible-2.10
   ubuntu1804:
     - pip:
     - pip-latest:

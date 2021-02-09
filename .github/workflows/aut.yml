@@ -31,8 +31,23 @@ jobs:
         - build_args: ''
           dockerfile: centos7
           pre: pip
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: pip
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: pip
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: centos7
+          pre: pip
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos7
           pre: pip-latest
@@ -46,8 +61,23 @@ jobs:
         - build_args: ''
           dockerfile: centos7
           pre: pip-latest
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: pip-latest
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: pip-latest
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: centos7
+          pre: pip-latest
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos7
           pre: tar
@@ -61,8 +91,23 @@ jobs:
         - build_args: ''
           dockerfile: centos7
           pre: tar
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: tar
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: tar
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: centos7
+          pre: tar
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos7
           pre: rpm
@@ -86,8 +131,23 @@ jobs:
         - build_args: ''
           dockerfile: centos8
           pre: pip
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: centos8
+          pre: pip
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: centos8
+          pre: pip
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: centos8
+          pre: pip
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos8
           pre: pip-latest
@@ -101,8 +161,23 @@ jobs:
         - build_args: ''
           dockerfile: centos8
           pre: pip-latest
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: centos8
+          pre: pip-latest
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: centos8
+          pre: pip-latest
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: centos8
+          pre: pip-latest
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos8
           pre: tar
@@ -116,8 +191,23 @@ jobs:
         - build_args: ''
           dockerfile: centos8
           pre: tar
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: centos8
+          pre: tar
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: centos8
+          pre: tar
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: centos8
+          pre: tar
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubi7
           pre: pip
@@ -131,8 +221,23 @@ jobs:
         - build_args: ''
           dockerfile: ubi7
           pre: pip
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubi7
+          pre: pip
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubi7
+          pre: pip
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: ubi7
+          pre: pip
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubi7
           pre: tar
@@ -146,8 +251,23 @@ jobs:
         - build_args: ''
           dockerfile: ubi7
           pre: tar
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubi7
+          pre: tar
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubi7
+          pre: tar
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: ubi7
+          pre: tar
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubi7
           pre: rpm
@@ -171,8 +291,23 @@ jobs:
         - build_args: ''
           dockerfile: ubi8
           pre: pip
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubi8
+          pre: pip
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubi8
+          pre: pip
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: ubi8
+          pre: pip
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubi8
           pre: tar
@@ -186,8 +321,23 @@ jobs:
         - build_args: ''
           dockerfile: ubi8
           pre: tar
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubi8
+          pre: tar
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubi8
+          pre: tar
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: ubi8
+          pre: tar
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubuntu2004
           pre: pip
@@ -201,8 +351,23 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu2004
           pre: pip
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubuntu2004
+          pre: pip
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubuntu2004
+          pre: pip
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: ubuntu2004
+          pre: pip
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubuntu2004
           pre: tar
@@ -216,6 +381,27 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu2004
           pre: tar
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubuntu2004
+          pre: tar
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubuntu2004
+          pre: tar
+          product: ansible-base
+          version: 2.10.5
+        - build_args: ''
+          dockerfile: ubuntu2004
+          pre: tar
+          product: ansible-base
+          version: 2.10.6rc1
+        - PPA: ansible/ansible-2.10
+          build_args: ''
+          dockerfile: ubuntu2004
+          pre: ppa
           product: ansible-base
           version: 2.10.5
         - build_args: ''
@@ -231,8 +417,23 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: pip
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: pip
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: pip
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip-latest
@@ -246,8 +447,23 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip-latest
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: pip-latest
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: pip-latest
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: pip-latest
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubuntu1804
           pre: tar
@@ -261,8 +477,23 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu1804
           pre: tar
+          product: ansible
+          version: 2.8.19rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: tar
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: tar
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: tar
+          product: ansible-base
+          version: 2.10.6rc1
         - PPA: ansible/ansible-2.8
           build_args: ''
           dockerfile: ubuntu1804
@@ -321,8 +552,18 @@ jobs:
         - build_args: ''
           dockerfile: macos-10.15
           pre: pip
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: macos-10.15
+          pre: pip
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: macos-10.15
+          pre: pip
+          product: ansible-base
+          version: 2.10.6rc1
         - build_args: ''
           dockerfile: macos-10.15
           pre: tar
@@ -331,8 +572,18 @@ jobs:
         - build_args: ''
           dockerfile: macos-10.15
           pre: tar
+          product: ansible
+          version: 2.9.18rc1
+        - build_args: ''
+          dockerfile: macos-10.15
+          pre: tar
           product: ansible-base
           version: 2.10.5
+        - build_args: ''
+          dockerfile: macos-10.15
+          pre: tar
+          product: ansible-base
+          version: 2.10.6rc1
     timeout-minutes: 20
 name: Ansible User Artifact Tests
 'on':

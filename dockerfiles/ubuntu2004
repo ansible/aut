@@ -1,11 +1,8 @@
 FROM ubuntu:20.04
 
-ARG WANT_SYSTEM_PIP=true
-
 RUN apt-get update && \
   apt-get -y upgrade && \
-  apt-get -y install wget && \
-  ([[ "$WANT_SYSTEM_PIP" == "true" ]] && apt-get -y install python3-pip || true) && \
+  apt-get -y install python3-pip wget && \
   apt-get clean
 
 COPY . /opt

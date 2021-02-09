@@ -1,10 +1,7 @@
 FROM centos:8
 
-ARG WANT_SYSTEM_PIP=true
-
 RUN yum -y update && \
-  yum -y install wget which && \
-  ([[ "$WANT_SYSTEM_PIP" == "true" ]] && yum -y install python3-pip || true) && \
+  yum -y install python3-pip wget which && \
   yum clean all
 
 COPY . /opt

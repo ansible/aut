@@ -3,16 +3,15 @@
 set -eux
 
 source pip-common.sh
+source python-common.sh
 
-if [[ "$PIP" != "" ]]; then
-  echo "pip already installed, refusing to install via get-pip.py"
-  echo "This pre script is only compatible with dockerfiles that don't install"
-  echo "pip from system repositories."
-  exit 1
+# Upgrade pip
+PYVER="$($PYTHON -c 'import sys; print(sys.version_info[0])')"
+
+if [[ "$PYVER" == "3" ]]; then
+  $PIP install --upgrade pip
+else
+  $PIP install --upgrade 'pip < 21'
 fi
 
-# Install latest pip
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
-
-pip install $PRODUCT==$VERSION
+$PIP install $PRODUCT==$VERSION

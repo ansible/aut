@@ -398,12 +398,6 @@ jobs:
           pre: tar
           product: ansible-base
           version: 2.10.6rc1
-        - PPA: ansible/ansible-2.10
-          build_args: ''
-          dockerfile: ubuntu2004
-          pre: ppa
-          product: ansible-base
-          version: 2.10.5
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip

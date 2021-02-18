@@ -1,7 +1,7 @@
 jobs:
   build:
-    name: ${{ matrix.dockerfile }}, ${{ matrix.pre }}, ${{ matrix.product }}, ${{
-      matrix.version }}
+    name: ${{ matrix.dockerfile }} ${{ matrix.PPA }}, ${{ matrix.pre }}, ${{ matrix.product
+      }}, ${{ matrix.version }}
     runs-on: ubuntu-latest
     steps:
     - name: Clone repo

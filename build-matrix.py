@@ -19,7 +19,8 @@ YAML = {
         'build': {
             'runs-on': 'ubuntu-latest',
             'timeout-minutes': 20,  # TODO: config?
-            'name': '${{ matrix.dockerfile }}, ${{ matrix.pre }}, '
+            'name': '${{ matrix.dockerfile }} ${{ matrix.PPA }}, '
+                    '${{ matrix.pre }}, '
                     '${{ matrix.product }}, ${{ matrix.version }}',
             'strategy': {
                 # We want to see all failures.

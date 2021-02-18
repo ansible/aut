@@ -19,9 +19,7 @@ YAML = {
         'build': {
             'runs-on': 'ubuntu-latest',
             'timeout-minutes': 20,  # TODO: config?
-            'name': '${{ matrix.dockerfile }} ${{ matrix.PPA }}, '
-                    '${{ matrix.pre }}, '
-                    '${{ matrix.product }}, ${{ matrix.version }}',
+            'name': '${{ matrix.pretty_name }}',
             'strategy': {
                 # We want to see all failures.
                 'fail-fast': False,
@@ -58,8 +56,7 @@ YAML = {
             # This is kind of a hack, it's not a "dockerfile" but we use the key
             'runs-on': '${{ matrix.dockerfile }}',
             'timeout-minutes': 20,  # TODO: config?
-            'name': '${{ matrix.dockerfile }}, ${{ matrix.pre }}, '
-                    '${{ matrix.product }}, ${{ matrix.version }}',
+            'name': '${{ matrix.pretty_name }}',
             'strategy': {
                 # We want to see all failures.
                 'fail-fast': False,
@@ -103,6 +100,7 @@ def fill_matrix(job, data, entries):
                         continue
 
                     for version in data[product]:
+                        pre_values = []  # Used in pretty_name
                         matrix_entry = {
                             'dockerfile': os_env,
                             'version': version,
@@ -131,6 +129,15 @@ def fill_matrix(job, data, entries):
                             if env:
                                 for k, v in env.items():
                                     matrix_entry[k] = v
+                                    pre_values.append(v)
+
+                        name = '{0}/{1}/{2}/{3}'.format(
+                            os_env,
+                            pre,
+                            '/'.join(pre_values),
+                            version)
+                        matrix_entry['pretty_name'] = name.replace('//', '/')
+
                         YAML['jobs'][job]['strategy']['matrix']['include'].append(matrix_entry)
 
 

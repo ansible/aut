@@ -131,12 +131,12 @@ def fill_matrix(job, data, entries):
                                     matrix_entry[k] = v
                                     pre_values.append(v)
 
-                        name = '{0}/{1}/{2}/{3}'.format(
+                        name = '{0},{1},{2},{3}'.format(
                             os_env,
                             pre,
-                            '/'.join(pre_values),
+                            ','.join(pre_values),
                             version)
-                        matrix_entry['pretty_name'] = name.replace('//', '/')
+                        matrix_entry['pretty_name'] = name.replace(',,', ',')
 
                         YAML['jobs'][job]['strategy']['matrix']['include'].append(matrix_entry)
 

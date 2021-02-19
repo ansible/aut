@@ -141,6 +141,25 @@ def fill_matrix(job, data, entries):
                         YAML['jobs'][job]['strategy']['matrix']['include'].append(matrix_entry)
 
 
+def matrixbar(num_entries):
+    maxlen = 60
+    fills = round((num_entries * maxlen) / MAX_MATRIX_ENTRIES)
+    out = 'Matrix entries: '
+    out += '█' * fills
+    out += '▁' * (maxlen - fills)
+    out += '  '
+    
+    percentage = (num_entries / MAX_MATRIX_ENTRIES) * 100
+    if percentage < 70:
+        out += '\033[92m'
+    elif percentage < 80:
+        out += '\033[93m'
+    else:
+        out += '\033[91m'
+    out += str(num_entries) + ' / ' + str(MAX_MATRIX_ENTRIES)
+    out += '\033[m'
+    return out
+
 def main():
     with open('matrix.yml', 'r') as f:
         data = yaml.safe_load(f.read())
@@ -153,9 +172,7 @@ def main():
         len(YAML['jobs']['macos-build']['strategy']['matrix']['include'])
 
     print(yaml.dump(YAML))
-    print(
-        'Matrix entries in use: %d/%d' % (total_entries, MAX_MATRIX_ENTRIES),
-        file=sys.stderr)
+    print(matrixbar(total_entries), file=sys.stderr)
 
 if __name__ == '__main__':
     main()

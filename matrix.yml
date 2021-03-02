@@ -9,7 +9,7 @@ ansible-base:
   - 2.10.6rc1
 
 ansible-core:
-  #- 2.11.0b1
+  - 2.11.0b1
 
 # This is a mapping of dockerfile -> "pre" scripts
 # Note that the matrix can grow rapidly and we are limited to 256 matrix entries
@@ -31,6 +31,7 @@ dockerfiles:
     - rpm:
         exclude:
           - ansible-base
+          - ansible-core
           - rc
   centos8:
     - pip:
@@ -42,6 +43,7 @@ dockerfiles:
     - rpm:
         exclude:
           - ansible-base
+          - ansible-core
           - rc
   ubi8:
     - pip:

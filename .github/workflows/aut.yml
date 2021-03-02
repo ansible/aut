@@ -50,6 +50,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos7
+          pre: pip
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: centos7
           pre: pip-latest
           product: ansible
           version: 2.8.18
@@ -80,6 +85,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos7
+          pre: pip-latest
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: centos7
           pre: tar
           product: ansible
           version: 2.8.18
@@ -108,6 +118,11 @@ jobs:
           pre: tar
           product: ansible-base
           version: 2.10.6rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: tar
+          product: ansible-core
+          version: 2.11.0b1
         - build_args: ''
           dockerfile: centos7
           pre: rpm
@@ -150,6 +165,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos8
+          pre: pip
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: centos8
           pre: pip-latest
           product: ansible
           version: 2.8.18
@@ -180,6 +200,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: centos8
+          pre: pip-latest
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: centos8
           pre: tar
           product: ansible
           version: 2.8.18
@@ -209,6 +234,11 @@ jobs:
           product: ansible-base
           version: 2.10.6rc1
         - build_args: ''
+          dockerfile: centos8
+          pre: tar
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
           dockerfile: ubi7
           pre: pip
           product: ansible
@@ -240,6 +270,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubi7
+          pre: pip
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: ubi7
           pre: tar
           product: ansible
           version: 2.8.18
@@ -268,6 +303,11 @@ jobs:
           pre: tar
           product: ansible-base
           version: 2.10.6rc1
+        - build_args: ''
+          dockerfile: ubi7
+          pre: tar
+          product: ansible-core
+          version: 2.11.0b1
         - build_args: ''
           dockerfile: ubi7
           pre: rpm
@@ -310,6 +350,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubi8
+          pre: pip
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: ubi8
           pre: tar
           product: ansible
           version: 2.8.18
@@ -339,6 +384,11 @@ jobs:
           product: ansible-base
           version: 2.10.6rc1
         - build_args: ''
+          dockerfile: ubi8
+          pre: tar
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
           dockerfile: ubuntu2004
           pre: pip
           product: ansible
@@ -370,6 +420,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubuntu2004
+          pre: pip
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: ubuntu2004
           pre: tar
           product: ansible
           version: 2.8.18
@@ -399,6 +454,11 @@ jobs:
           product: ansible-base
           version: 2.10.6rc1
         - build_args: ''
+          dockerfile: ubuntu2004
+          pre: tar
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
           dockerfile: ubuntu1804
           pre: pip
           product: ansible
@@ -430,6 +490,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubuntu1804
+          pre: pip
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: ubuntu1804
           pre: pip-latest
           product: ansible
           version: 2.8.18
@@ -460,6 +525,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: ubuntu1804
+          pre: pip-latest
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: ubuntu1804
           pre: tar
           product: ansible
           version: 2.8.18
@@ -488,6 +558,11 @@ jobs:
           pre: tar
           product: ansible-base
           version: 2.10.6rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: tar
+          product: ansible-core
+          version: 2.11.0b1
         - PPA: ansible/ansible-2.8
           build_args: ''
           dockerfile: ubuntu1804
@@ -518,6 +593,12 @@ jobs:
           pre: ppa
           product: ansible-base
           version: 2.10.5
+        - PPA: ansible/ansible
+          build_args: ''
+          dockerfile: ubuntu1804
+          pre: ppa
+          product: ansible-core
+          version: 2.11.0b1
     timeout-minutes: 20
   macos-build:
     name: ${{ matrix.dockerfile }}, ${{ matrix.pre }}, ${{ matrix.product }}, ${{
@@ -560,6 +641,11 @@ jobs:
           version: 2.10.6rc1
         - build_args: ''
           dockerfile: macos-10.15
+          pre: pip
+          product: ansible-core
+          version: 2.11.0b1
+        - build_args: ''
+          dockerfile: macos-10.15
           pre: tar
           product: ansible
           version: 2.9.17
@@ -578,6 +664,11 @@ jobs:
           pre: tar
           product: ansible-base
           version: 2.10.6rc1
+        - build_args: ''
+          dockerfile: macos-10.15
+          pre: tar
+          product: ansible-core
+          version: 2.11.0b1
     timeout-minutes: 20
 name: Ansible User Artifact Tests
 'on':

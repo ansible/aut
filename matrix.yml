@@ -61,6 +61,7 @@ dockerfiles:
         exclude:
           - rc
           - ansible
+          - beta
         env:
           PPA: ansible/ansible
   ubuntu1804:
@@ -93,6 +94,7 @@ dockerfiles:
         version_re: "^(?!2\\.8)"
         exclude:
           - rc
+          - beta
         env:
           PPA: ansible/ansible
 

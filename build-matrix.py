@@ -19,8 +19,7 @@ YAML = {
         'build': {
             'runs-on': 'ubuntu-latest',
             'timeout-minutes': 20,  # TODO: config?
-            'name': '${{ matrix.dockerfile }}, ${{ matrix.pre }}, '
-                    '${{ matrix.product }}, ${{ matrix.version }}',
+            'name': '${{ matrix.pretty_name }}',
             'strategy': {
                 # We want to see all failures.
                 'fail-fast': False,
@@ -57,8 +56,7 @@ YAML = {
             # This is kind of a hack, it's not a "dockerfile" but we use the key
             'runs-on': '${{ matrix.dockerfile }}',
             'timeout-minutes': 20,  # TODO: config?
-            'name': '${{ matrix.dockerfile }}, ${{ matrix.pre }}, '
-                    '${{ matrix.product }}, ${{ matrix.version }}',
+            'name': '${{ matrix.pretty_name }}',
             'strategy': {
                 # We want to see all failures.
                 'fail-fast': False,
@@ -102,6 +100,7 @@ def fill_matrix(job, data, entries):
                         continue
 
                     for version in data[product]:
+                        pre_values = []  # Used in pretty_name
                         matrix_entry = {
                             'dockerfile': os_env,
                             'version': version,
@@ -130,8 +129,36 @@ def fill_matrix(job, data, entries):
                             if env:
                                 for k, v in env.items():
                                     matrix_entry[k] = v
+                                    pre_values.append(v)
+
+                        name = '{0} {1} {2} {3}'.format(
+                            os_env,
+                            pre,
+                            ' '.join(pre_values),
+                            version)
+                        matrix_entry['pretty_name'] = name.replace('  ', ' ')
+
                         YAML['jobs'][job]['strategy']['matrix']['include'].append(matrix_entry)
 
+
+def matrixbar(num_entries):
+    maxlen = 60
+    fills = round((num_entries * maxlen) / MAX_MATRIX_ENTRIES)
+    out = 'Matrix entries: '
+    out += '█' * fills
+    out += '▁' * (maxlen - fills)
+    out += '  '
+    
+    percentage = (num_entries / MAX_MATRIX_ENTRIES) * 100
+    if percentage < 70:
+        out += '\033[92m'
+    elif percentage < 80:
+        out += '\033[93m'
+    else:
+        out += '\033[91m'
+    out += str(num_entries) + ' / ' + str(MAX_MATRIX_ENTRIES)
+    out += '\033[m'
+    return out
 
 def main():
     with open('matrix.yml', 'r') as f:
@@ -145,9 +172,7 @@ def main():
         len(YAML['jobs']['macos-build']['strategy']['matrix']['include'])
 
     print(yaml.dump(YAML))
-    print(
-        'Matrix entries in use: %d/%d' % (total_entries, MAX_MATRIX_ENTRIES),
-        file=sys.stderr)
+    print(matrixbar(total_entries), file=sys.stderr)
 
 if __name__ == '__main__':
     main()

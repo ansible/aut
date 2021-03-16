@@ -12,7 +12,7 @@ YAML = {
         'push': None,
         'pull_request': None,
         'schedule': [
-            { 'cron': '0 0 * * *', }
+            { 'cron': '0 13 * * *', }
         ],
     },
     'jobs': {

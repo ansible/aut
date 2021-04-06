@@ -46,6 +46,8 @@ dockerfiles:
           - ansible-base
           - ansible-core
           - rc
+  ubi7-py35:
+    - pip-latest:
   ubi8:
     - pip:
     - tar:

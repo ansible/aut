@@ -6,12 +6,14 @@ source pip-common.sh
 source python-common.sh
 
 # Upgrade pip
-PYVER="$($PYTHON -c 'import sys; print(sys.version_info[0])')"
+PIPVER="$($PYTHON <<EOF
+import sys
+if sys.version_info[:2] < (3, 6):
+    print("pip < 21")
+else:
+    print("pip")
+EOF
+)"
 
-if [[ "$PYVER" == "3" ]]; then
-  $PIP install --upgrade pip
-else
-  $PIP install --upgrade 'pip < 21'
-fi
-
+$PIP install --upgrade $PIPVER
 $PIP install $PRODUCT==$VERSION

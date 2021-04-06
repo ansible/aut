@@ -6,7 +6,7 @@ ansible:
 
 ansible-base:
   - 2.10.7
-  #- 2.10.7rc1
+  - 2.10.8rc1
 
 ansible-core:
   - 2.11.0b4

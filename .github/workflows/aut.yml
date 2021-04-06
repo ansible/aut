@@ -38,6 +38,12 @@ jobs:
         - build_args: ''
           dockerfile: centos7
           pre: pip
+          pretty_name: centos7 pip 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: pip
           pretty_name: centos7 pip 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -68,6 +74,12 @@ jobs:
         - build_args: ''
           dockerfile: centos7
           pre: pip-latest
+          pretty_name: centos7 pip-latest 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: centos7
+          pre: pip-latest
           pretty_name: centos7 pip-latest 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -95,6 +107,12 @@ jobs:
           pretty_name: centos7 tar 2.10.7
           product: ansible-base
           version: 2.10.7
+        - build_args: ''
+          dockerfile: centos7
+          pre: tar
+          pretty_name: centos7 tar 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
         - build_args: ''
           dockerfile: centos7
           pre: tar
@@ -140,6 +158,12 @@ jobs:
         - build_args: ''
           dockerfile: centos8
           pre: pip
+          pretty_name: centos8 pip 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: centos8
+          pre: pip
           pretty_name: centos8 pip 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -167,6 +191,12 @@ jobs:
           pretty_name: centos8 pip-latest 2.10.7
           product: ansible-base
           version: 2.10.7
+        - build_args: ''
+          dockerfile: centos8
+          pre: pip-latest
+          pretty_name: centos8 pip-latest 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
         - build_args: ''
           dockerfile: centos8
           pre: pip-latest
@@ -200,6 +230,12 @@ jobs:
         - build_args: ''
           dockerfile: centos8
           pre: tar
+          pretty_name: centos8 tar 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: centos8
+          pre: tar
           pretty_name: centos8 tar 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -230,6 +266,12 @@ jobs:
         - build_args: ''
           dockerfile: ubi7
           pre: pip
+          pretty_name: ubi7 pip 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: ubi7
+          pre: pip
           pretty_name: ubi7 pip 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -257,6 +299,12 @@ jobs:
           pretty_name: ubi7 tar 2.10.7
           product: ansible-base
           version: 2.10.7
+        - build_args: ''
+          dockerfile: ubi7
+          pre: tar
+          pretty_name: ubi7 tar 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
         - build_args: ''
           dockerfile: ubi7
           pre: tar
@@ -302,6 +350,12 @@ jobs:
         - build_args: ''
           dockerfile: ubi8
           pre: pip
+          pretty_name: ubi8 pip 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: ubi8
+          pre: pip
           pretty_name: ubi8 pip 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -329,6 +383,12 @@ jobs:
           pretty_name: ubi8 tar 2.10.7
           product: ansible-base
           version: 2.10.7
+        - build_args: ''
+          dockerfile: ubi8
+          pre: tar
+          pretty_name: ubi8 tar 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
         - build_args: ''
           dockerfile: ubi8
           pre: tar
@@ -362,6 +422,12 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu2004
           pre: pip
+          pretty_name: ubuntu2004 pip 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: ubuntu2004
+          pre: pip
           pretty_name: ubuntu2004 pip 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -389,6 +455,12 @@ jobs:
           pretty_name: ubuntu2004 tar 2.10.7
           product: ansible-base
           version: 2.10.7
+        - build_args: ''
+          dockerfile: ubuntu2004
+          pre: tar
+          pretty_name: ubuntu2004 tar 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
         - build_args: ''
           dockerfile: ubuntu2004
           pre: tar
@@ -436,6 +508,12 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip
+          pretty_name: ubuntu1804 pip 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: pip
           pretty_name: ubuntu1804 pip 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -466,6 +544,12 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip-latest
+          pretty_name: ubuntu1804 pip-latest 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: pip-latest
           pretty_name: ubuntu1804 pip-latest 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -493,6 +577,12 @@ jobs:
           pretty_name: ubuntu1804 tar 2.10.7
           product: ansible-base
           version: 2.10.7
+        - build_args: ''
+          dockerfile: ubuntu1804
+          pre: tar
+          pretty_name: ubuntu1804 tar 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
         - build_args: ''
           dockerfile: ubuntu1804
           pre: tar
@@ -574,6 +664,12 @@ jobs:
         - build_args: ''
           dockerfile: macos-10.15
           pre: pip
+          pretty_name: macos-10.15 pip 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
+        - build_args: ''
+          dockerfile: macos-10.15
+          pre: pip
           pretty_name: macos-10.15 pip 2.11.0b4
           product: ansible-core
           version: 2.11.0b4
@@ -595,6 +691,12 @@ jobs:
           pretty_name: macos-10.15 tar 2.10.7
           product: ansible-base
           version: 2.10.7
+        - build_args: ''
+          dockerfile: macos-10.15
+          pre: tar
+          pretty_name: macos-10.15 tar 2.10.8rc1
+          product: ansible-base
+          version: 2.10.8rc1
         - build_args: ''
           dockerfile: macos-10.15
           pre: tar

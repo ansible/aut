@@ -42,6 +42,4 @@ macOS:
   #      version_re: "^(?!2\\.8)"
   macos-10.15:
     - pip:
-        exclude:
-          - ansible
-          - ansible-core
+        version_re: "aaaa"

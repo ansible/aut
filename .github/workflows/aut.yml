@@ -62,12 +62,6 @@ jobs:
         - build_args: ''
           dockerfile: ubi7-py35
           pre: pip-latest
-          pretty_name: ubi7-py35 pip-latest 2.11.0rc1
-          product: ansible-core
-          version: 2.11.0rc1
-        - build_args: ''
-          dockerfile: ubi7-py35
-          pre: pip-latest
           pretty_name: ubi7-py35 pip-latest 2.11.0rc2
           product: ansible-core
           version: 2.11.0rc2
@@ -89,19 +83,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-        - build_args: ''
-          dockerfile: macos-10.15
-          pre: pip
-          pretty_name: macos-10.15 pip 2.10.7
-          product: ansible-base
-          version: 2.10.7
-        - build_args: ''
-          dockerfile: macos-10.15
-          pre: pip
-          pretty_name: macos-10.15 pip 2.10.8rc1
-          product: ansible-base
-          version: 2.10.8rc1
+        include: []
     timeout-minutes: 20
 name: Ansible User Artifact Tests
 'on':

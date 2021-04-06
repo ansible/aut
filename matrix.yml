@@ -25,81 +25,8 @@ ansible-core:
 # `docker build`. When this is specified, the pre is skipped in the default
 # case (and ONLY run with the build args specified).
 dockerfiles:
-  centos7:
-    - pip:
-    - pip-latest:
-    - tar:
-    - rpm:
-        exclude:
-          - ansible-base
-          - ansible-core
-          - rc
-  centos8:
-    - pip:
-    - pip-latest:
-    - tar:
-  ubi7:
-    - pip:
-    - tar:
-    - rpm:
-        exclude:
-          - ansible-base
-          - ansible-core
-          - rc
   ubi7-py35:
     - pip-latest:
-  ubi8:
-    - pip:
-    - tar:
-  ubuntu2004:
-    - pip:
-    - tar:
-    - ppa:
-        version_re: ^2\.10
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.10
-    - ppa:
-        exclude:
-          - rc
-          - ansible
-          - beta
-        env:
-          PPA: ansible/ansible
-  ubuntu1804:
-    - pip:
-    - pip-latest:
-    - tar:
-    - ppa:
-        version_re: ^2\.8
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.8
-    - ppa:
-        version_re: ^2\.9
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.9
-    - ppa:
-        version_re: ^2\.10
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.10
-    - ppa:
-        # The default PPA will have ansible-2.9 and ansible-base 2.10
-        # Once ansible (ACD) 2.10 goes into it, we'll want to
-        # exclude: ansible to limit to ansible-base.
-        # At that point version_re will likely want to be ^2\.Y as well.
-        version_re: "^(?!2\\.8)"
-        exclude:
-          - rc
-          - beta
-        env:
-          PPA: ansible/ansible
 
 # macOS is a bit of a special case, we don't do any docker stuff, just skip
 # straight to pre scripts.
@@ -114,6 +41,4 @@ macOS:
   #      version_re: "^(?!2\\.8)"
   macos-10.15:
     - pip:
-        version_re: "^(?!2\\.8)"
-    - tar:
-        version_re: "^(?!2\\.8)"
+        version_re: "aaaa"

@@ -15,5 +15,5 @@ else:
 EOF
 )"
 
-$PIP install --upgrade $PIPVER
+$PIP install --upgrade "$PIPVER"
 $PIP install $PRODUCT==$VERSION

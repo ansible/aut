@@ -2,4 +2,4 @@
 
 set -eux
 
-ansible-playbook pb.yml
+ansible-playbook -i inventory pb.yml

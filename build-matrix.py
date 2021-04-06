@@ -148,7 +148,7 @@ def matrixbar(num_entries):
     out += '█' * fills
     out += '▁' * (maxlen - fills)
     out += '  '
-    
+
     percentage = (num_entries / MAX_MATRIX_ENTRIES) * 100
     if percentage < 70:
         out += '\033[92m'

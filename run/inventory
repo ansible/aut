@@ -1,0 +1,5 @@
+test001 ansible_connection=local
+test002 ansible_connection=local
+test003 ansible_connection=local
+test004 ansible_connection=local
+test005 ansible_connection=local

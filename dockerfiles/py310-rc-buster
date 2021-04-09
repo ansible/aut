@@ -1,0 +1,10 @@
+FROM python:3.10-rc-buster
+
+RUN apt-get update && \
+  apt-get -y upgrade && \
+  apt-get -y install wget && \
+  apt-get clean
+
+COPY . /opt
+
+ENTRYPOINT ["bash", "/opt/entrypoint.sh"]

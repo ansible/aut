@@ -38,6 +38,9 @@ dockerfiles:
     - pip:
     - pip-latest:
     - tar:
+  py310-rc-buster:
+    - pip:
+    - tar:
   ubi7:
     - pip:
     - tar:

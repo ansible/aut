@@ -67,6 +67,7 @@ dockerfiles:
           - rc
           - ansible
           - beta
+          - ansible-core
         env:
           PPA: ansible/ansible
   ubuntu1804:

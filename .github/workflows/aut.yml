@@ -403,13 +403,6 @@ jobs:
           pretty_name: ubuntu2004 ppa ansible/ansible 2.10.8
           product: ansible-base
           version: 2.10.8
-        - PPA: ansible/ansible
-          build_args: ''
-          dockerfile: ubuntu2004
-          pre: ppa
-          pretty_name: ubuntu2004 ppa ansible/ansible 2.11.0
-          product: ansible-core
-          version: 2.11.0
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip

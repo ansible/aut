@@ -9,8 +9,8 @@ ansible-base:
   #- 2.10.8rc1
 
 ansible-core:
-  - 2.11.0b4
   - 2.11.0rc2
+  - 2.11.0
 
 # This is a mapping of dockerfile -> "pre" scripts
 # Note that the matrix can grow rapidly and we are limited to 256 matrix entries
@@ -75,12 +75,6 @@ dockerfiles:
     - pip-latest:
     - tar:
     - ppa:
-        version_re: ^2\.8
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.8
-    - ppa:
         version_re: ^2\.9
         exclude:
           - rc
@@ -101,6 +95,7 @@ dockerfiles:
         exclude:
           - rc
           - beta
+          - ansible-core
         env:
           PPA: ansible/ansible
 

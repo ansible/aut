@@ -1,11 +1,10 @@
 ansible:
   - 2.9.20
-  #- 2.8.20rc1
-  #- 2.9.20rc1
+  - 2.9.21rc1
 
 ansible-base:
   - 2.10.8
-  #- 2.10.8rc1
+  - 2.10.9rc1
 
 ansible-core:
   - 2.11.0rc2

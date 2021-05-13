@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 set -xu
-set +e
 
 source python-common.sh
+
+set +e
 
 # See what pip is called on the platform
 

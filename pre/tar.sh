@@ -7,7 +7,7 @@ source pip-common.sh
 wget "https://releases.ansible.com/$PRODUCT/$PRODUCT-$VERSION.tar.gz"
 tar -xf "$PRODUCT-$VERSION.tar.gz"
 
-$PIP install jinja2 pyyaml
+$PIP install "${PIP_ANSIBLE_DEPS[@]}"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   pushd "$(pwd)/$PRODUCT-$VERSION"

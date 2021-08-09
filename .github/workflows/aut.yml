@@ -299,20 +299,6 @@ jobs:
           pretty_name: ubuntu2004 tar 2.11.3
           product: ansible-core
           version: 2.11.3
-        - PPA: ansible/ansible-2.10
-          build_args: ''
-          dockerfile: ubuntu2004
-          pre: ppa
-          pretty_name: ubuntu2004 ppa ansible/ansible-2.10 2.10.12
-          product: ansible-base
-          version: 2.10.12
-        - PPA: ansible/ansible
-          build_args: ''
-          dockerfile: ubuntu2004
-          pre: ppa
-          pretty_name: ubuntu2004 ppa ansible/ansible 2.10.12
-          product: ansible-base
-          version: 2.10.12
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip
@@ -367,34 +353,6 @@ jobs:
           pretty_name: ubuntu1804 tar 2.11.3
           product: ansible-core
           version: 2.11.3
-        - PPA: ansible/ansible-2.9
-          build_args: ''
-          dockerfile: ubuntu1804
-          pre: ppa
-          pretty_name: ubuntu1804 ppa ansible/ansible-2.9 2.9.24
-          product: ansible
-          version: 2.9.24
-        - PPA: ansible/ansible-2.10
-          build_args: ''
-          dockerfile: ubuntu1804
-          pre: ppa
-          pretty_name: ubuntu1804 ppa ansible/ansible-2.10 2.10.12
-          product: ansible-base
-          version: 2.10.12
-        - PPA: ansible/ansible
-          build_args: ''
-          dockerfile: ubuntu1804
-          pre: ppa
-          pretty_name: ubuntu1804 ppa ansible/ansible 2.9.24
-          product: ansible
-          version: 2.9.24
-        - PPA: ansible/ansible
-          build_args: ''
-          dockerfile: ubuntu1804
-          pre: ppa
-          pretty_name: ubuntu1804 ppa ansible/ansible 2.10.12
-          product: ansible-base
-          version: 2.10.12
     timeout-minutes: 20
   macos-build:
     name: ${{ matrix.pretty_name }}

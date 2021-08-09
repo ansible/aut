@@ -55,48 +55,10 @@ dockerfiles:
   ubuntu2004:
     - pip:
     - tar:
-    - ppa:
-        version_re: ^2\.10
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.10
-    - ppa:
-        exclude:
-          - rc
-          - ansible
-          - beta
-          - ansible-core
-        env:
-          PPA: ansible/ansible
   ubuntu1804:
     - pip:
     - pip-latest:
     - tar:
-    - ppa:
-        version_re: ^2\.9
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.9
-    - ppa:
-        version_re: ^2\.10
-        exclude:
-          - rc
-        env:
-          PPA: ansible/ansible-2.10
-    - ppa:
-        # The default PPA will have ansible-2.9 and ansible-base 2.10
-        # Once ansible (ACD) 2.10 goes into it, we'll want to
-        # exclude: ansible to limit to ansible-base.
-        # At that point version_re will likely want to be ^2\.Y as well.
-        version_re: "^(?!2\\.8)"
-        exclude:
-          - rc
-          - beta
-          - ansible-core
-        env:
-          PPA: ansible/ansible
 
 # macOS is a bit of a special case, we don't do any docker stuff, just skip
 # straight to pre scripts.

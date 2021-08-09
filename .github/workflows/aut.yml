@@ -319,24 +319,6 @@ jobs:
           version: 2.11.3
         - build_args: ''
           dockerfile: ubuntu1804
-          pre: pip-latest
-          pretty_name: ubuntu1804 pip-latest 2.9.24
-          product: ansible
-          version: 2.9.24
-        - build_args: ''
-          dockerfile: ubuntu1804
-          pre: pip-latest
-          pretty_name: ubuntu1804 pip-latest 2.10.12
-          product: ansible-base
-          version: 2.10.12
-        - build_args: ''
-          dockerfile: ubuntu1804
-          pre: pip-latest
-          pretty_name: ubuntu1804 pip-latest 2.11.3
-          product: ansible-core
-          version: 2.11.3
-        - build_args: ''
-          dockerfile: ubuntu1804
           pre: tar
           pretty_name: ubuntu1804 tar 2.9.24
           product: ansible

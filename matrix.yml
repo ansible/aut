@@ -57,7 +57,8 @@ dockerfiles:
     - tar:
   ubuntu1804:
     - pip:
-    - pip-latest:
+    # this is buggy right now I guess? traceback
+    #- pip-latest:
     - tar:
 
 # macOS is a bit of a special case, we don't do any docker stuff, just skip

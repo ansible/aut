@@ -10,19 +10,19 @@ most situations.
   make the scripts in `pre` work.
 
 * `pre` contains scripts that have various ways to install `ansible` and/or
-  `ansible-base`.
+  `ansible-base` and/or `ansible-core`.
 
 * `run` contains a series of tests which get run after a script in `pre` is
   executed to install Ansible.
 
 * `matrix.yml` describes the test matrix
 
-* `build-matrix.py` generates `.travis.yml`
+* `build-matrix.py` generates the Github Actions workflow YAML.
 
 ## Using
 
 To bump versions, update `matrix.yml` accordingly and run:
 
 ```bash
-./build-matrix.py > .travis.yml
+./update-matrix.sh
 ```

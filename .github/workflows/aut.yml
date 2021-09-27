@@ -1,4 +1,3 @@
-SKIP  ubi7-py35
 jobs:
   build:
     name: ${{ matrix.pretty_name }}

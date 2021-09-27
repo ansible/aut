@@ -2,8 +2,10 @@ FROM ubuntu:18.04
 
 RUN apt-get update && \
   apt-get -y upgrade && \
-  apt-get -y install python3-pip wget && \
+  apt-get -y install python3.8 python3-pip wget && \
   apt-get clean
+
+RUN ln /usr/bin/python3.8 /usr/bin/python3 -sf
 
 COPY . /opt
 

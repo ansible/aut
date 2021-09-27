@@ -2,7 +2,8 @@ FROM registry.access.redhat.com/ubi8/ubi
 
 RUN \
   yum update -y && \
-  yum install -y procps-ng python3-pip wget && \
+  yum -y module enable python38 && \
+  yum -y install procps-ng python38-pip wget && \
   yum clean all
 
 COPY . /opt

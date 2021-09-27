@@ -1,7 +1,8 @@
 FROM centos:8
 
 RUN yum -y update && \
-  yum -y install python3-pip wget which && \
+  yum -y module enable python38 && \
+  yum -y install python38-pip wget which && \
   yum clean all
 
 COPY . /opt

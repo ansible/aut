@@ -2,8 +2,12 @@ FROM centos:7
 
 RUN yum -y update && \
   yum -y install epel-release && \
-  yum -y install python-pip wget which && \
+  yum install -y centos-release-scl-rh && \
+  yum install -y rh-python38-python rh-python38-python-pip wget which && \
   yum clean all
+
+ENV PATH=/opt/rh/rh-python38/root/usr/local/bin:/opt/rh/rh-python38/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV LD_LIBRARY_PATH=/opt/rh/rh-python38/root/usr/lib64
 
 COPY . /opt
 

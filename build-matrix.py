@@ -101,7 +101,6 @@ def fill_matrix(job, data, entries):
 
                     for version in data[product]:
                         if version > '2.11' and os_env == 'ubi7-py35':
-                            print("SKIP ", os_env)
                             continue
                         pre_values = []  # Used in pretty_name
                         matrix_entry = {

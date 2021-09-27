@@ -16,4 +16,10 @@ EOF
 )"
 
 $PIP install --upgrade "$PIPVER"
+
+# When upgrading pip from SCL the pip binary path
+# change so we need to reload the path in the PIP
+# variable.
+source pip-common.sh
+
 $PIP install $PRODUCT==$VERSION

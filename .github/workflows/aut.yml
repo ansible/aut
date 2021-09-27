@@ -1,3 +1,4 @@
+SKIP  ubi7-py35
 jobs:
   build:
     name: ${{ matrix.pretty_name }}
@@ -287,12 +288,6 @@ jobs:
           pretty_name: ubi7-py35 pip-latest 2.11.5
           product: ansible-core
           version: 2.11.5
-        - build_args: ''
-          dockerfile: ubi7-py35
-          pre: pip-latest
-          pretty_name: ubi7-py35 pip-latest 2.12.0b1
-          product: ansible-core
-          version: 2.12.0b1
         - build_args: ''
           dockerfile: ubi8
           pre: pip

@@ -50,6 +50,7 @@ dockerfiles:
           - rc
   ubi7-py35:
     - pip-latest:
+        version_re: '^2\.(?:9|10|11)'
   ubi8:
     - pip:
     - tar:

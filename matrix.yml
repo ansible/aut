@@ -1,15 +1,15 @@
 ansible:
-  - 2.9.26
+  - 2.9.27
   - 2.9.27rc1
 
 ansible-base:
-  - 2.10.14
+  - 2.10.15
   - 2.10.15rc1
 
 ansible-core:
-  - 2.11.5
+  - 2.11.6
   - 2.11.6rc1
-  - 2.12.0b1
+  - 2.12.0b2
 
 # This is a mapping of dockerfile -> "pre" scripts
 # Note that the matrix can grow rapidly and we are limited to 256 matrix entries

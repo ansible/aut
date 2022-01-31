@@ -33,10 +33,6 @@ dockerfiles:
           - ansible-base
           - ansible-core
           - rc
-  centos8:
-    - pip:
-    - pip-latest:
-    - tar:
   py310-rc-buster:
     - pip:
     - tar:

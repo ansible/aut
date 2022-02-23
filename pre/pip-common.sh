@@ -29,7 +29,7 @@ pip_major = int(pip.__version__.split('.')[0])
 if pip_major < 9:
     print("pyyaml cryptography>=2.5,<3.4 jinja2<3 markupsafe<2 packaging<21")
 elif pip_major < 19:
-    print("pyyaml cryptography>=2.5,<3.4 jinja2 markupsafe")
+    print("pyyaml cryptography>=2.5,<3.4 jinja2 markupsafe<2.1")
 else:
     print("pyyaml cryptography jinja2 markupsafe")
 EOF

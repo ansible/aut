@@ -5,9 +5,7 @@ ansible-base:
   - 2.10.17
 
 ansible-core:
-  - 2.11.9
   - 2.11.10
-  - 2.12.3
   - 2.12.4
 
 # This is a mapping of dockerfile -> "pre" scripts

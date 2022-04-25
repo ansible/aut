@@ -32,33 +32,21 @@ jobs:
         - build_args: ''
           dockerfile: centos7
           pre: pip
-          pretty_name: centos7 pip 2.11.10
+          pretty_name: centos7 pip 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: centos7
           pre: pip
-          pretty_name: centos7 pip 2.11.11rc1
+          pretty_name: centos7 pip 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: centos7
           pre: pip
-          pretty_name: centos7 pip 2.12.4
+          pretty_name: centos7 pip 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: centos7
-          pre: pip
-          pretty_name: centos7 pip 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: centos7
-          pre: pip
-          pretty_name: centos7 pip 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: centos7
           pre: pip-latest
@@ -74,33 +62,21 @@ jobs:
         - build_args: ''
           dockerfile: centos7
           pre: pip-latest
-          pretty_name: centos7 pip-latest 2.11.10
+          pretty_name: centos7 pip-latest 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: centos7
           pre: pip-latest
-          pretty_name: centos7 pip-latest 2.11.11rc1
+          pretty_name: centos7 pip-latest 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: centos7
           pre: pip-latest
-          pretty_name: centos7 pip-latest 2.12.4
+          pretty_name: centos7 pip-latest 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: centos7
-          pre: pip-latest
-          pretty_name: centos7 pip-latest 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: centos7
-          pre: pip-latest
-          pretty_name: centos7 pip-latest 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: centos7
           pre: tar
@@ -116,33 +92,21 @@ jobs:
         - build_args: ''
           dockerfile: centos7
           pre: tar
-          pretty_name: centos7 tar 2.11.10
+          pretty_name: centos7 tar 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: centos7
           pre: tar
-          pretty_name: centos7 tar 2.11.11rc1
+          pretty_name: centos7 tar 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: centos7
           pre: tar
-          pretty_name: centos7 tar 2.12.4
+          pretty_name: centos7 tar 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: centos7
-          pre: tar
-          pretty_name: centos7 tar 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: centos7
-          pre: tar
-          pretty_name: centos7 tar 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: centos7
           pre: rpm
@@ -164,33 +128,21 @@ jobs:
         - build_args: ''
           dockerfile: py310-rc-buster
           pre: pip
-          pretty_name: py310-rc-buster pip 2.11.10
+          pretty_name: py310-rc-buster pip 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: py310-rc-buster
           pre: pip
-          pretty_name: py310-rc-buster pip 2.11.11rc1
+          pretty_name: py310-rc-buster pip 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: py310-rc-buster
           pre: pip
-          pretty_name: py310-rc-buster pip 2.12.4
+          pretty_name: py310-rc-buster pip 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: py310-rc-buster
-          pre: pip
-          pretty_name: py310-rc-buster pip 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: py310-rc-buster
-          pre: pip
-          pretty_name: py310-rc-buster pip 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: py310-rc-buster
           pre: tar
@@ -206,33 +158,21 @@ jobs:
         - build_args: ''
           dockerfile: py310-rc-buster
           pre: tar
-          pretty_name: py310-rc-buster tar 2.11.10
+          pretty_name: py310-rc-buster tar 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: py310-rc-buster
           pre: tar
-          pretty_name: py310-rc-buster tar 2.11.11rc1
+          pretty_name: py310-rc-buster tar 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: py310-rc-buster
           pre: tar
-          pretty_name: py310-rc-buster tar 2.12.4
+          pretty_name: py310-rc-buster tar 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: py310-rc-buster
-          pre: tar
-          pretty_name: py310-rc-buster tar 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: py310-rc-buster
-          pre: tar
-          pretty_name: py310-rc-buster tar 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: ubi7
           pre: pip
@@ -248,33 +188,21 @@ jobs:
         - build_args: ''
           dockerfile: ubi7
           pre: pip
-          pretty_name: ubi7 pip 2.11.10
+          pretty_name: ubi7 pip 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubi7
           pre: pip
-          pretty_name: ubi7 pip 2.11.11rc1
+          pretty_name: ubi7 pip 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: ubi7
           pre: pip
-          pretty_name: ubi7 pip 2.12.4
+          pretty_name: ubi7 pip 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: ubi7
-          pre: pip
-          pretty_name: ubi7 pip 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: ubi7
-          pre: pip
-          pretty_name: ubi7 pip 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: ubi7
           pre: tar
@@ -290,33 +218,21 @@ jobs:
         - build_args: ''
           dockerfile: ubi7
           pre: tar
-          pretty_name: ubi7 tar 2.11.10
+          pretty_name: ubi7 tar 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubi7
           pre: tar
-          pretty_name: ubi7 tar 2.11.11rc1
+          pretty_name: ubi7 tar 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: ubi7
           pre: tar
-          pretty_name: ubi7 tar 2.12.4
+          pretty_name: ubi7 tar 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: ubi7
-          pre: tar
-          pretty_name: ubi7 tar 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: ubi7
-          pre: tar
-          pretty_name: ubi7 tar 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: ubi7
           pre: rpm
@@ -338,15 +254,9 @@ jobs:
         - build_args: ''
           dockerfile: ubi7-py35
           pre: pip-latest
-          pretty_name: ubi7-py35 pip-latest 2.11.10
+          pretty_name: ubi7-py35 pip-latest 2.11.11
           product: ansible-core
-          version: 2.11.10
-        - build_args: ''
-          dockerfile: ubi7-py35
-          pre: pip-latest
-          pretty_name: ubi7-py35 pip-latest 2.11.11rc1
-          product: ansible-core
-          version: 2.11.11rc1
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubi8
           pre: pip
@@ -362,33 +272,21 @@ jobs:
         - build_args: ''
           dockerfile: ubi8
           pre: pip
-          pretty_name: ubi8 pip 2.11.10
+          pretty_name: ubi8 pip 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubi8
           pre: pip
-          pretty_name: ubi8 pip 2.11.11rc1
+          pretty_name: ubi8 pip 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: ubi8
           pre: pip
-          pretty_name: ubi8 pip 2.12.4
+          pretty_name: ubi8 pip 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: ubi8
-          pre: pip
-          pretty_name: ubi8 pip 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: ubi8
-          pre: pip
-          pretty_name: ubi8 pip 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: ubi8
           pre: tar
@@ -404,33 +302,21 @@ jobs:
         - build_args: ''
           dockerfile: ubi8
           pre: tar
-          pretty_name: ubi8 tar 2.11.10
+          pretty_name: ubi8 tar 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubi8
           pre: tar
-          pretty_name: ubi8 tar 2.11.11rc1
+          pretty_name: ubi8 tar 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: ubi8
           pre: tar
-          pretty_name: ubi8 tar 2.12.4
+          pretty_name: ubi8 tar 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: ubi8
-          pre: tar
-          pretty_name: ubi8 tar 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: ubi8
-          pre: tar
-          pretty_name: ubi8 tar 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: ubuntu2004
           pre: pip
@@ -446,33 +332,21 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu2004
           pre: pip
-          pretty_name: ubuntu2004 pip 2.11.10
+          pretty_name: ubuntu2004 pip 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubuntu2004
           pre: pip
-          pretty_name: ubuntu2004 pip 2.11.11rc1
+          pretty_name: ubuntu2004 pip 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: ubuntu2004
           pre: pip
-          pretty_name: ubuntu2004 pip 2.12.4
+          pretty_name: ubuntu2004 pip 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: ubuntu2004
-          pre: pip
-          pretty_name: ubuntu2004 pip 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: ubuntu2004
-          pre: pip
-          pretty_name: ubuntu2004 pip 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: ubuntu2004
           pre: tar
@@ -488,33 +362,21 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu2004
           pre: tar
-          pretty_name: ubuntu2004 tar 2.11.10
+          pretty_name: ubuntu2004 tar 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubuntu2004
           pre: tar
-          pretty_name: ubuntu2004 tar 2.11.11rc1
+          pretty_name: ubuntu2004 tar 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: ubuntu2004
           pre: tar
-          pretty_name: ubuntu2004 tar 2.12.4
+          pretty_name: ubuntu2004 tar 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: ubuntu2004
-          pre: tar
-          pretty_name: ubuntu2004 tar 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: ubuntu2004
-          pre: tar
-          pretty_name: ubuntu2004 tar 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip
@@ -530,33 +392,21 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip
-          pretty_name: ubuntu1804 pip 2.11.10
+          pretty_name: ubuntu1804 pip 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip
-          pretty_name: ubuntu1804 pip 2.11.11rc1
+          pretty_name: ubuntu1804 pip 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: ubuntu1804
           pre: pip
-          pretty_name: ubuntu1804 pip 2.12.4
+          pretty_name: ubuntu1804 pip 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: ubuntu1804
-          pre: pip
-          pretty_name: ubuntu1804 pip 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: ubuntu1804
-          pre: pip
-          pretty_name: ubuntu1804 pip 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: ubuntu1804
           pre: tar
@@ -572,33 +422,21 @@ jobs:
         - build_args: ''
           dockerfile: ubuntu1804
           pre: tar
-          pretty_name: ubuntu1804 tar 2.11.10
+          pretty_name: ubuntu1804 tar 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: ubuntu1804
           pre: tar
-          pretty_name: ubuntu1804 tar 2.11.11rc1
+          pretty_name: ubuntu1804 tar 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: ubuntu1804
           pre: tar
-          pretty_name: ubuntu1804 tar 2.12.4
+          pretty_name: ubuntu1804 tar 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: ubuntu1804
-          pre: tar
-          pretty_name: ubuntu1804 tar 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: ubuntu1804
-          pre: tar
-          pretty_name: ubuntu1804 tar 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
     timeout-minutes: 20
   macos-build:
     name: ${{ matrix.pretty_name }}
@@ -633,33 +471,21 @@ jobs:
         - build_args: ''
           dockerfile: macos-10.15
           pre: pip
-          pretty_name: macos-10.15 pip 2.11.10
+          pretty_name: macos-10.15 pip 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: macos-10.15
           pre: pip
-          pretty_name: macos-10.15 pip 2.11.11rc1
+          pretty_name: macos-10.15 pip 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: macos-10.15
           pre: pip
-          pretty_name: macos-10.15 pip 2.12.4
+          pretty_name: macos-10.15 pip 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: macos-10.15
-          pre: pip
-          pretty_name: macos-10.15 pip 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: macos-10.15
-          pre: pip
-          pretty_name: macos-10.15 pip 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
         - build_args: ''
           dockerfile: macos-10.15
           pre: tar
@@ -675,33 +501,21 @@ jobs:
         - build_args: ''
           dockerfile: macos-10.15
           pre: tar
-          pretty_name: macos-10.15 tar 2.11.10
+          pretty_name: macos-10.15 tar 2.11.11
           product: ansible-core
-          version: 2.11.10
+          version: 2.11.11
         - build_args: ''
           dockerfile: macos-10.15
           pre: tar
-          pretty_name: macos-10.15 tar 2.11.11rc1
+          pretty_name: macos-10.15 tar 2.12.5
           product: ansible-core
-          version: 2.11.11rc1
+          version: 2.12.5
         - build_args: ''
           dockerfile: macos-10.15
           pre: tar
-          pretty_name: macos-10.15 tar 2.12.4
+          pretty_name: macos-10.15 tar 2.13.0b1
           product: ansible-core
-          version: 2.12.4
-        - build_args: ''
-          dockerfile: macos-10.15
-          pre: tar
-          pretty_name: macos-10.15 tar 2.12.5rc1
-          product: ansible-core
-          version: 2.12.5rc1
-        - build_args: ''
-          dockerfile: macos-10.15
-          pre: tar
-          pretty_name: macos-10.15 tar 2.13.0b0
-          product: ansible-core
-          version: 2.13.0b0
+          version: 2.13.0b1
     timeout-minutes: 20
 name: Ansible User Artifact Tests
 'on':
